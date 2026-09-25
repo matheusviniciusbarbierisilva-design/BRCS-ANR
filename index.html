@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BRCS ANR — Rocket League</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0D13;
+    --bg-panel:#11151E;
+    --bg-panel-2:#161B26;
+    --line:#242B39;
+    --orange:#FF6A1F;
+    --blue:#33D4FF;
+    --text:#ECEFF4;
+    --muted:#8A93A6;
+    --safe-top:env(safe-area-inset-top,0px);
+    --safe-bottom:env(safe-area-inset-bottom,0px);
+    box-sizing:border-box;
+    padding-top:var(--safe-top);
+    padding-bottom:var(--safe-bottom);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:calc(64px + var(--safe-top));scroll-behavior:smooth;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Teko',sans-serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+    line-height:0.95;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:680px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;
+    top:var(--safe-top);
+    z-index:50;
+    background:rgba(10,13,19,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Teko',sans-serif;font-size:26px;font-weight:700;}
+  .brand .dot{width:9px;height:9px;background:var(--orange);border-radius:50%;box-shadow:0 0 10px var(--orange);}
+  .navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted);}
+  .navlinks a{text-decoration:none;transition:color .2s;}
+  .navlinks a:hover{color:var(--text);}
+  .navlinks{display:none;}
+  @media(min-width:760px){.navlinks{display:flex;}}
+  .nav-cta{background:var(--orange);color:#100800;padding:8px 16px;border-radius:3px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:76px 24px 64px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 500px at 20% -10%, rgba(255,106,31,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(51,212,255,0.10), transparent 60%);
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+    background:linear-gradient(90deg, transparent, var(--orange), var(--blue), transparent);
+    opacity:.5;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);background:var(--bg-panel);
+    padding:6px 12px;border-radius:20px;font-size:12.5px;color:var(--muted);
+    margin-bottom:22px;
+  }
+  .badge b{color:var(--orange);font-weight:700;}
+  .hero h1{font-size:clamp(56px,12vw,108px);color:var(--text);}
+  .hero h1 .accent{color:var(--orange);}
+  .hero-sub{max-width:560px;color:var(--muted);font-size:17px;margin-top:18px;}
+  .hero-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:3px;font-size:14.5px;font-weight:600;
+    text-decoration:none;transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--orange);color:#170900;}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);}
+
+  .stat-strip{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    margin-top:48px;
+  }
+  @media(min-width:640px){.stat-strip{grid-template-columns:repeat(4,1fr);}}
+  .stat{background:var(--bg-panel);padding:20px 18px;}
+  .stat .num{font-family:'Teko';font-size:44px;color:var(--blue);line-height:1;}
+  .stat .lbl{font-size:12.5px;color:var(--muted);margin-top:4px;}
+
+  section{padding:88px 0;border-top:1px solid var(--line);}
+  .eyebrow{color:var(--orange);font-size:13px;font-weight:600;margin-bottom:10px;}
+  .sec-title{font-size:clamp(34px,5vw,52px);margin-bottom:16px;}
+  .sec-lede{color:var(--muted);max-width:620px;font-size:16px;margin-bottom:48px;}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:28px;border-left:2px solid var(--line);}
+  .tl-item{position:relative;padding-bottom:38px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-34px;top:4px;width:11px;height:11px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--orange);
+  }
+  .tl-item.peak::before{background:var(--orange);box-shadow:0 0 12px var(--orange);}
+  .tl-date{font-family:'Teko';font-size:22px;color:var(--blue);letter-spacing:.02em;}
+  .tl-title{font-size:19px;font-weight:600;margin-top:2px;}
+  .tl-body{color:var(--muted);font-size:15px;margin-top:6px;max-width:560px;}
+
+  /* ROSTER */
+  .roster{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:760px){.roster{grid-template-columns:repeat(3,1fr);}}
+  .player{
+    background:var(--bg-panel);border:1px solid var(--line);border-radius:6px;padding:26px;
+    position:relative;overflow:hidden;
+  }
+  .player::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--orange),var(--blue));
+  }
+  .player .role{font-size:12.5px;color:var(--muted);text-transform:none;}
+  .player h3{font-size:32px;margin-top:6px;}
+  .player .nick{color:var(--orange);font-size:15px;font-weight:600;margin-top:2px;}
+  .player .desc{color:var(--muted);font-size:14.5px;margin-top:14px;}
+  .player .ranks{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;}
+  .chip{border:1px solid var(--line);border-radius:3px;padding:4px 9px;font-size:12px;color:var(--text);background:var(--bg-panel-2);}
+
+  /* RANKINGS TABLE */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;}
+  table{width:100%;border-collapse:collapse;min-width:560px;font-size:14.5px;}
+  th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line);}
+  th{color:var(--muted);font-weight:600;font-size:12.5px;background:var(--bg-panel-2);}
+  tr:last-child td{border-bottom:none;}
+  td.gold{color:var(--orange);font-weight:700;}
+  td.silver{color:var(--blue);font-weight:600;}
+
+  /* RLCS BANNER */
+  .rlcs{
+    background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;
+    padding:40px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between;
+  }
+  .rlcs .live{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--orange);font-weight:600;}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  .rlcs h3{font-size:38px;margin-top:8px;}
+  .record{display:flex;gap:28px;}
+  .record div{text-align:center;}
+  .record .n{font-family:'Teko';font-size:46px;color:var(--blue);}
+  .record .l{font-size:12px;color:var(--muted);}
+
+  /* ESTRUTURA */
+  .split{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:760px){.split{grid-template-columns:1fr 1fr;}}
+  .org-card{background:var(--bg-panel);border:1px solid var(--line);border-radius:6px;padding:30px;}
+  .org-card.pro{border-color:rgba(255,106,31,0.4);}
+  .org-card h3{font-size:26px;margin-bottom:10px;}
+  .org-card .tag{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:3px;margin-bottom:14px;}
+  .org-card.pro .tag{background:rgba(255,106,31,0.15);color:var(--orange);}
+  .org-card.com .tag{background:rgba(51,212,255,0.15);color:var(--blue);}
+  .org-card p{color:var(--muted);font-size:15px;}
+
+  /* FORM */
+  .form-panel{background:var(--bg-panel);border:1px solid var(--line);border-radius:8px;padding:36px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;}
+  .field input,.field select,.field textarea{
+    width:100%;background:var(--bg-panel-2);border:1px solid var(--line);border-radius:4px;
+    padding:11px 13px;color:var(--text);font-family:inherit;font-size:14.5px;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .field-row{display:grid;grid-template-columns:1fr;gap:18px;}
+  @media(min-width:600px){.field-row{grid-template-columns:1fr 1fr;}}
+  .form-note{font-size:13px;color:var(--muted);margin-top:14px;}
+  .submitbtn{border:none;cursor:pointer;font-family:inherit;}
+
+  footer{border-top:1px solid var(--line);padding:36px 24px calc(36px + var(--safe-bottom));}
+  .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .live .pulse{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><span class="dot"></span>BRCS ANR</div>
+    <div class="navlinks">
+      <a href="#historia">História</a>
+      <a href="#elenco">Elenco</a>
+      <a href="#rankings">Rankings</a>
+      <a href="#rlcs">RLCS 2026</a>
+      <a href="#estrutura">Estrutura</a>
+    </div>
+    <a class="nav-cta" href="#juntese">Junte-se</a>
+  </nav>
+</header>
+
+<section class="hero" style="padding-top:76px;border-top:none;">
+  <div class="wrap">
+    <div class="badge">Invictos nas qualificatórias abertas da <b>RLCS 2026</b></div>
+    <h1>BRCS <span class="accent">ANR</span></h1>
+    <p class="hero-sub">Do bairro Ana Rosa, em Cambé (PR), para o topo mundial do Rocket League. Uma dinastia de 21 anos que formou o "Trio do Medo" — e agora disputa a elite oficial.</p>
+    <div class="hero-row">
+      <a class="btn btn-primary" href="#juntese">Quero jogar pela comunidade</a>
+      <a class="btn btn-ghost" href="#historia">Ver a história</a>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><div class="num">2005</div><div class="lbl">Fundação em Ana Rosa, Cambé</div></div>
+      <div class="stat"><div class="num">1º</div><div class="lbl">Lugar mundial em trios — 2018</div></div>
+      <div class="stat"><div class="num">21</div><div class="lbl">Anos de história do clã</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Vitórias na campanha RLCS 2026</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="historia">
+  <div class="wrap">
+    <div class="eyebrow">A história</div>
+    <h2 class="sec-title">Do CS:GO ao topo do Rocket League</h2>
+    <p class="sec-lede">Fundada por João Victor Sambrano no bairro Ana Rosa — de onde vem a sigla ANR — a organização mudou de rumo quando o primo Matheus entrou para o time em 2015, aos 5 anos. Onze anos depois, o clã amador virou organização profissional.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">18 ABR 2005</div>
+        <div class="tl-title">Fundação em Ana Rosa</div>
+        <div class="tl-body">João Victor Sambrano funda o clã em Cambé, Paraná, inicialmente focado em CS:GO.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1 AGO 2015</div>
+        <div class="tl-title">A virada para o Rocket League</div>
+        <div class="tl-body">Matheus Vinicius Barbieri Silva (BRCSMatheuzin), primo de João, entra para a equipe aos 5 anos. Nasce o "Trio do Medo" com Arthur (BRCS_L DARK L157).</div>
+      </div>
+      <div class="tl-item peak">
+        <div class="tl-date">2018</div>
+        <div class="tl-title">Domínio dos rankings mundiais</div>
+        <div class="tl-body">O trio ocupa as três primeiras posições do ranking oficial da Psyonix em trios simultaneamente, e cravam o Top 7 mundial em 1v1.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">29 DEZ 2019</div>
+        <div class="tl-title">A pausa</div>
+        <div class="tl-body">Após títulos em ESL, Mock-it, MLE, RSC, GEDEZE, Strelau, JL e start.gg, João e Arthur pausam. Matheus segue ativo e no topo.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1 SET 2026</div>
+        <div class="tl-title">Matheus vai para o profissional</div>
+        <div class="tl-body">Após 11 anos de cenário amador, Matheus, aos 16 anos, oficializa sua transição para o competitivo profissional.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">4 SET 2026</div>
+        <div class="tl-title">Nasce o braço profissional</div>
+        <div class="tl-body">João Victor e Matheus fundam oficialmente a BRCS ANR como organização profissional de esports.</div>
+      </div>
+      <div class="tl-item peak">
+        <div class="tl-date">5 SET 2026</div>
+        <div class="tl-title">O Trio do Medo se reúne</div>
+        <div class="tl-body">Um dia depois, João e Arthur voltam da pausa para reformar o trio original no elenco principal da BRCS ANR.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="elenco">
+  <div class="wrap">
+    <div class="eyebrow">O elenco</div>
+    <h2 class="sec-title">O Trio do Medo</h2>
+    <p class="sec-lede">Freestyle mecânico de chão, rotações de erro zero e mais de uma década jogando juntos — o elenco principal da BRCS ANR.</p>
+
+    <div class="roster">
+      <div class="player">
+        <div class="role">Chão · o "iShow de Cambé"</div>
+        <h3>Matheus</h3>
+        <div class="nick">BRCSMatheuzin</div>
+        <div class="desc">16 anos. Começou a competir aos 5. Grand Champion na era clássica e Supersonic Legend após o F2P. Profissionalizado em 1º de setembro de 2026.</div>
+        <div class="ranks"><span class="chip">SSL</span><span class="chip">1º do mundo · 3v3 (2018)</span><span class="chip">2º do mundo · 2v2 (2018)</span></div>
+      </div>
+      <div class="player">
+        <div class="role">Rotação · fundador</div>
+        <h3>João Victor</h3>
+        <div class="nick">BRCSsambrano</div>
+        <div class="desc">Fundador da BRCS ANR em 2005, no bairro Ana Rosa. Voltou da pausa em 5 de setembro de 2026 para reformar o trio original.</div>
+        <div class="ranks"><span class="chip">2º do mundo · 3v3 (2018)</span><span class="chip">6º do mundo · 1v1 (2018)</span></div>
+      </div>
+      <div class="player">
+        <div class="role">Rotação · precisão</div>
+        <h3>Arthur</h3>
+        <div class="nick">BRCS_L DARK L157</div>
+        <div class="desc">Parte do trio desde 2015, aos 5 anos. Retornou da pausa junto com João para a reunião histórica do elenco principal.</div>
+        <div class="ranks"><span class="chip">3º do mundo · 3v3 (2018)</span><span class="chip">7º do mundo · 1v1 (2018)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rankings">
+  <div class="wrap">
+    <div class="eyebrow">2018 · rankings oficiais Psyonix</div>
+    <h2 class="sec-title">O ano do domínio global</h2>
+    <p class="sec-lede">Em 2018, os três jogadores do Trio do Medo apareceram simultaneamente entre os melhores do planeta em todas as modalidades competitivas.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Modalidade</th><th>Matheus</th><th>João Victor</th><th>Arthur</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Solo (1v1)</td><td>3º do mundo</td><td>6º do mundo</td><td>7º do mundo</td></tr>
+          <tr><td>Duos (2v2)</td><td class="silver">2º do mundo</td><td>12º do mundo</td><td>34º do mundo</td></tr>
+          <tr><td>Trios (3v3)</td><td class="gold">1º do mundo</td><td class="silver">2º do mundo</td><td>3º do mundo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="rlcs">
+  <div class="wrap">
+    <div class="eyebrow">Agora</div>
+    <h2 class="sec-title">Campanha histórica na RLCS 2026</h2>
+    <p class="sec-lede">Direto do cenário amador para as qualificatórias abertas da elite mundial — sem perder uma única partida.</p>
+
+    <div class="rlcs">
+      <div>
+        <div class="live"><span class="pulse"></span>QUALIFICATÓRIAS ABERTAS · AMÉRICA DO SUL</div>
+        <h3>Campanha 100% invicta</h3>
+      </div>
+      <div class="record">
+        <div><div class="n">100%</div><div class="l">Partidas vencidas</div></div>
+        <div><div class="n">0</div><div class="l">Derrotas</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="estrutura">
+  <div class="wrap">
+    <div class="eyebrow">Estrutura</div>
+    <h2 class="sec-title">Dois times, uma origem</h2>
+    <p class="sec-lede">A base amadora em Ana Rosa continua revelando talentos — e é o caminho de acesso ao time profissional.</p>
+
+    <div class="split">
+      <div class="org-card pro">
+        <span class="tag">PROFISSIONAL</span>
+        <h3>BRCS ANR</h3>
+        <p>Matheus, João e Arthur. Elite mundial, disputando as vagas oficiais da RLCS 2026.</p>
+      </div>
+      <div class="org-card com">
+        <span class="tag">AMADORA</span>
+        <h3>Comunidade BRCS ANR</h3>
+        <p>Categoria de base no bairro Ana Rosa, aberta a novos talentos de todo o Brasil, com chance real de acesso ao elenco profissional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="juntese">
+  <div class="wrap narrow">
+    <div class="eyebrow">Comunidade amadora</div>
+    <h2 class="sec-title">Junte-se ao time</h2>
+    <p class="sec-lede">Conta um pouco sobre você. A Comunidade BRCS ANR está aberta a jogadores de todo o Brasil que queiram construir seu caminho até o elenco profissional.</p>
+
+    <div class="form-panel">
+      <form id="joinForm">
+        <div class="field-row">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" required>
+          </div>
+          <div class="field">
+            <label for="idade">Idade</label>
+            <input id="idade" name="idade" type="number" min="1" max="99" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="rank">Rank atual</label>
+            <select id="rank" name="rank">
+              <option>Champion</option>
+              <option>Grand Champion</option>
+              <option>Supersonic Legend</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="posicao">Posição principal</label>
+            <select id="posicao" name="posicao">
+              <option>Chão / mecânica</option>
+              <option>Rotação / suporte</option>
+              <option>Flexível</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cidade">Cidade / estado</label>
+          <input id="cidade" name="cidade" type="text" placeholder="Ex: Cambé, PR">
+        </div>
+        <div class="field">
+          <label for="video">Link de gameplay (opcional)</label>
+          <input id="video" name="video" type="url" placeholder="YouTube, Twitch, ballchasing...">
+        </div>
+        <div class="field">
+          <label for="msg">Por que você quer entrar</label>
+          <textarea id="msg" name="msg" rows="4"></textarea>
+        </div>
+        <button class="btn btn-primary submitbtn" type="submit">Enviar inscrição</button>
+      </form>
+      <p class="form-note" id="formNote">Ao enviar, abriremos seu app de e-mail com os dados preenchidos para envio à BRCS ANR.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>BRCS ANR — Ana Rosa, Cambé, Paraná · fundada em 2005</div>
+    <div>BRCS ANR Profissional · Comunidade BRCS ANR Amadora</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('joinForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(e.target);
+    var body = [
+      'Nome: ' + d.get('nome'),
+      'Idade: ' + d.get('idade'),
+      'Rank: ' + d.get('rank'),
+      'Posição: ' + d.get('posicao'),
+      'Cidade/Estado: ' + d.get('cidade'),
+      'Gameplay: ' + d.get('video'),
+      '',
+      d.get('msg')
+    ].join('\n');
+    var mailto = 'mailto:contato@brcsanr.com.br?subject=' + encodeURIComponent('Inscrição Comunidade BRCS ANR - ' + d.get('nome')) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+  });
+</script>
+
+</body>
+</html>
