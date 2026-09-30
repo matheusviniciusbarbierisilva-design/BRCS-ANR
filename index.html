@@ -3,7 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Comunidade BRCS ANR</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
+<title>Comunidade BRCS ANR | Time amador de Rocket League em Cambé-PR</title>
+<meta name="description" content="Comunidade BRCS ANR: time amador de Rocket League nascido no bairro Ana Rosa, em Cambé-PR. Conheça nossa história, jogadores, campeonatos e participe do processo seletivo.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Comunidade BRCS ANR">
+<meta property="og:title" content="Comunidade BRCS ANR | Time amador de Rocket League">
+<meta property="og:description" content="Comunidade BRCS ANR: time amador de Rocket League nascido no bairro Ana Rosa, em Cambé-PR. Conheça nossa história, jogadores, campeonatos e participe do processo seletivo.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsTeam","name":"Comunidade BRCS ANR","alternateName":"BRCS ANR","sport":"Rocket League (eSports)","description":"Time amador de Rocket League nascido no bairro Ana Rosa, em Cambé, Paraná.","foundingDate":"2026-09-29","location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Cambé","addressRegion":"PR","addressCountry":"BR"}}}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap">
 <style>
 :root{
@@ -48,7 +59,7 @@ p{max-width:62ch}
 form fieldset{border:1px solid var(--line);margin:0 0 20px;padding:16px 20px 20px;max-width:640px}
 form legend{font:800 26px "Barlow Condensed",sans-serif;color:var(--accent);padding:0 8px}
 form label{display:block;margin-top:14px;font-weight:500}
-form input[type=text],form input:not([type]),form textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;background:#000;color:var(--ink);border:1px solid #666;border-radius:4px;font:inherit}
+form input[type=text],form input:not([type]),form input[type=password],form textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;background:#000;color:var(--ink);border:1px solid #666;border-radius:4px;font:inherit}
 form input:focus,form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 form input.bad,form .opts.bad{border-color:var(--accent);outline:2px solid var(--accent)}
 .opts{margin-top:14px}.opts>span{display:block;font-weight:500}
@@ -56,6 +67,29 @@ form input.bad,form .opts.bad{border-color:var(--accent);outline:2px solid var(-
 .opts input{accent-color:var(--accent);margin-right:6px}
 .btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink);margin-left:8px}
 .dest{font-size:15px;color:var(--muted);word-break:break-all}
+.agora{background:var(--panel);border-left:3px solid var(--accent);padding:12px 16px;margin:16px 0 0;max-width:560px}
+#relogio{font:800 26px "Barlow Condensed",sans-serif}
+#proximo{color:var(--muted);font-size:15px;margin-top:2px}
+.cal .d.past{opacity:.5}
+.calctl{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}
+.calctl .btn.ghost{margin-left:0;padding:8px 16px}
+.calctl select{background:#000;color:var(--ink);border:1px solid #666;border-radius:4px;padding:9px 10px;font:inherit}
+.legend{display:flex;gap:8px;margin-bottom:12px}
+.calwrap{overflow-x:auto}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;min-width:340px}
+.cal .dw{font:800 18px "Barlow Condensed",sans-serif;text-align:center;padding:6px 0;color:var(--accent)}
+.cal .d{background:var(--panel);border:1px solid var(--line);min-height:84px;padding:4px;font-size:14px;overflow:hidden}
+.cal .d.out{background:transparent;border-color:transparent}
+.cal .d.today{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.cal .n{color:var(--muted);display:block}
+.chip{display:block;font-size:11px;line-height:1.2;padding:3px 5px;margin-top:3px;border-radius:3px;overflow-wrap:anywhere}
+.legend .chip{display:inline-block;font-size:13px;margin:0}
+.chip.treino{border:1px solid #fff;color:#fff}
+.chip.camp{background:var(--accent);color:#000;font-weight:500}
+@media(max-width:560px){.cal .d{min-height:70px;padding:2px}.chip{font-size:10px;padding:2px 3px}}
+input[type=date],form select{display:block;margin-top:6px;padding:10px 12px;background:#000;color:var(--ink);border:1px solid #666;border-radius:4px;font:inherit;color-scheme:dark}
+#admLista button{margin-left:10px;background:none;border:1px solid var(--ink);color:var(--ink);border-radius:4px;cursor:pointer;font:inherit;font-size:13px;padding:2px 8px}
+.linklike{background:none;border:0;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;margin-top:8px}
 .timeline{border-left:3px solid var(--accent);padding-left:24px;margin-top:28px}
 .timeline h3{font-size:28px}
 .timeline p{margin:6px 0 0;color:var(--muted)}
@@ -76,6 +110,7 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
     <button role="tab" data-tab="inicio" aria-selected="true">Início</button>
     <button role="tab" data-tab="historia" aria-selected="false">Nossa história</button>
     <button role="tab" data-tab="jogadores" aria-selected="false">Jogadores</button>
+    <button role="tab" data-tab="calendario" aria-selected="false">Campeonatos/Calendário</button>
     <button role="tab" data-tab="titulos" aria-selected="false">Títulos</button>
     <button role="tab" data-tab="participar" aria-selected="false">Quero participar</button>
     <button role="tab" data-tab="pro" aria-selected="false">BRCS ANR PROFISSIONAL</button>
@@ -120,6 +155,50 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
   <button class="btn" data-go="participar" style="margin-top:12px">Quero participar</button>
 </section>
 
+<section id="calendario" hidden>
+  <h2>Campeonatos/Calendário</h2>
+  <p>Acompanhe os treinos e campeonatos da Comunidade BRCS ANR. Escolha o mês e o ano (de 2026 a 2066).</p>
+  <div class="agora"><div id="relogio" aria-live="off"></div><div id="proximo"></div></div>
+  <div class="calctl">
+    <button type="button" class="btn ghost" id="prev" aria-label="Mês anterior">‹</button>
+    <select id="selMes" aria-label="Mês"></select>
+    <select id="selAno" aria-label="Ano"></select>
+    <button type="button" class="btn ghost" id="next" aria-label="Próximo mês">›</button>
+    <button type="button" class="btn ghost" id="hoje">Hoje</button>
+  </div>
+  <div class="legend"><span class="chip treino">Treino</span><span class="chip camp">Campeonato</span></div>
+  <div class="calwrap"><div class="cal" id="cal"></div></div>
+  <div id="admin" hidden>
+    <h3 class="sub">Painel dos fundadores</h3>
+    <form id="admConn" novalidate>
+      <fieldset><legend>Conectar ao GitHub</legend>
+        <p>Só quem tem acesso de escrita ao repositório consegue salvar eventos. Cole abaixo o seu token de acesso do GitHub (ele fica guardado apenas neste aparelho).</p>
+        <label>Usuário ou organização<input id="gUser" autocomplete="off"></label>
+        <label>Repositório<input id="gRepo" autocomplete="off"></label>
+        <label>Branch<input id="gBranch" value="main" autocomplete="off"></label>
+        <label>Token de acesso<input id="gToken" type="password" autocomplete="off"></label>
+        <p id="connMsg" role="status" style="color:var(--accent);margin:12px 0 0"></p>
+        <button type="submit" class="btn" style="margin-top:12px">Conectar</button>
+      </fieldset>
+    </form>
+    <div id="admEdit" hidden>
+      <form id="adm" novalidate>
+        <fieldset><legend>Adicionar evento</legend>
+          <label>Data<input type="date" id="admData" required></label>
+          <label>Nome do evento<input id="admNome" placeholder="Ex: Campeonato ESL"></label>
+          <label>Tipo<select id="admTipo"><option value="treino">Treino</option><option value="camp">Campeonato</option></select></label>
+          <p id="admMsg" role="status" style="color:var(--accent);margin:12px 0 0"></p>
+          <button type="submit" class="btn" style="margin-top:12px">Adicionar evento</button>
+        </fieldset>
+      </form>
+      <ul class="steps" id="admLista"></ul>
+      <button type="button" class="btn ghost" id="gSair" style="margin-left:0">Desconectar deste aparelho</button>
+    </div>
+  </div>
+  <h3 class="sub">Eventos do mês</h3>
+  <ul class="steps" id="evlist"></ul>
+</section>
+
 <section id="titulos" hidden>
   <h2>Títulos</h2>
   <div class="empty">
@@ -151,6 +230,8 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
       <label>Nome completo<input name="nome" required autocomplete="name"></label>
       <label>Data de nascimento / idade<input name="nasc" required></label>
       <label>Localidade (cidade/UF)<input name="local" required placeholder="Ex: Cambé/PR"></label>
+      <label>Telefone (WhatsApp) ou rede social<input name="contato" required placeholder="Ex: (43) 99999-9999 ou @seuinstagram"></label>
+      <p style="font-size:15px;color:var(--muted);margin:6px 0 0">Usaremos este contato para avisar se você foi aprovado ou reprovado e chamar os aprovados para a segunda fase.</p>
     </fieldset>
     <fieldset><legend>2. Ficha técnica e dados de jogo</legend>
       <label>Epic Games ID<input name="epic" required></label>
@@ -191,6 +272,7 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
 
 <footer>© 2026 Comunidade BRCS ANR · Fundada em 29/09/2026</footer>
 
+<script type="application/json" id="dados-eventos">{}</script>
 <script>
 const PLAYERS=[
   {nome:"BRCSMatheuzin",funcao:"Jogador Principal / Fundador",estilo:"Criador de jogadas e controle de bola no chão."},
@@ -200,6 +282,125 @@ const PLAYERS=[
 const roster=document.getElementById('roster');
 function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
 roster.innerHTML=PLAYERS.map(j=>`<article class="player"><h3>${esc(j.nome)}</h3><dl><dt>Função</dt><dd>${esc(j.funcao)}</dd><dt>Estilo de jogo</dt><dd>${esc(j.estilo)}</dd></dl></article>`).join('')+'<article class="player open"><h3>Vaga aberta</h3></article>';
+let EVENTOS={};try{EVENTOS=JSON.parse(document.getElementById('dados-eventos').textContent||'{}')}catch(e){}
+const MESES=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+const DIAS=["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+const selMes=document.getElementById('selMes'),selAno=document.getElementById('selAno');
+MESES.forEach((m,i)=>selMes.add(new Option(m,i)));
+for(let y=2026;y<=2066;y++)selAno.add(new Option(y,y));
+let cy=2026,cm=8;
+function clampHoje(){const t=new Date();cy=Math.min(2066,Math.max(2026,t.getFullYear()));cm=cy===t.getFullYear()?t.getMonth():(cy===2026?0:0)}
+clampHoje();
+const pad=n=>String(n).padStart(2,'0');
+function desenha(){
+  selMes.value=cm;selAno.value=cy;
+  document.getElementById('prev').disabled=(cy===2026&&cm===0);
+  document.getElementById('next').disabled=(cy===2066&&cm===11);
+  const cal=document.getElementById('cal'),t=new Date();
+  let h=DIAS.map(d=>`<div class="dw" title="${d}">${window.innerWidth<560?d.slice(0,3):d}</div>`).join('');
+  const off=new Date(cy,cm,1).getDay(),dias=new Date(cy,cm+1,0).getDate();
+  for(let i=0;i<off;i++)h+='<div class="d out"></div>';
+  const lista=[];
+  for(let d=1;d<=dias;d++){
+    const k=`${cy}-${pad(cm+1)}-${pad(d)}`,ev=EVENTOS[k]||[];
+    const hoje=(t.getFullYear()===cy&&t.getMonth()===cm&&t.getDate()===d);
+    const passado=new Date(cy,cm,d)<new Date(t.getFullYear(),t.getMonth(),t.getDate());
+    h+=`<div class="d${hoje?' today':''}${passado?' past':''}"><span class="n">${d}</span>${ev.map(e=>`<span class="chip ${e.tipo}">${esc(e.t)}</span>`).join('')}</div>`;
+    ev.forEach(e=>lista.push(`${DIAS[new Date(cy,cm,d).getDay()]}, dia ${d}: ${esc(e.t)}`));
+  }
+  cal.innerHTML=h;if(typeof renderAdmin==="function")renderAdmin();
+  document.getElementById('evlist').innerHTML=lista.length?lista.map(x=>`<li>${x}</li>`).join(''):'<li>Nenhum evento marcado neste mês.</li>';
+}
+function mover(n){cm+=n;if(cm<0){cm=11;cy--}if(cm>11){cm=0;cy++}desenha()}
+document.getElementById('prev').onclick=()=>mover(-1);
+document.getElementById('next').onclick=()=>mover(1);
+document.getElementById('hoje').onclick=()=>{clampHoje();desenha()};
+selMes.onchange=()=>{cm=+selMes.value;desenha()};
+selAno.onchange=()=>{cy=+selAno.value;desenha()};
+window.addEventListener('resize',desenha);
+desenha();
+let diaAtual=new Date().toDateString();
+function tick(){
+  const n=new Date();
+  document.getElementById('relogio').textContent=n.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+' · '+n.toLocaleTimeString('pt-BR');
+  const hj=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+  const prox=Object.keys(EVENTOS).sort().find(k=>{const[a,b,c]=k.split('-');return new Date(a,b-1,c)>=hj});
+  let txt='Nenhum evento futuro marcado.';
+  if(prox){const[a,b,c]=prox.split('-'),dd=Math.round((new Date(a,b-1,c)-hj)/864e5),ev=EVENTOS[prox].map(e=>e.t).join(' e ');
+    txt='Próximo: '+ev+' — '+(dd===0?'hoje':dd===1?'amanhã':'em '+dd+' dias')+' ('+c+'/'+b+'/'+a+')';}
+  document.getElementById('proximo').textContent=txt;
+  if(n.toDateString()!==diaAtual){
+    const ant=new Date(diaAtual),via=(ant.getFullYear()===cy&&ant.getMonth()===cm);
+    diaAtual=n.toDateString();
+    if(via){cy=Math.min(2066,Math.max(2026,n.getFullYear()));cm=n.getMonth()}
+    desenha();
+  }
+}
+tick();setInterval(tick,1000);
+
+var CFG=null;
+try{CFG=JSON.parse(localStorage.getItem('brcs_gh')||'null')}catch(e){}
+const admBox=document.getElementById('admin'),conn=document.getElementById('admConn'),edit=document.getElementById('admEdit');
+(function(){const h=location.hostname;if(h.endsWith('.github.io')){document.getElementById('gUser').value=h.split('.')[0];document.getElementById('gRepo').value=location.pathname.split('/')[1]||h}})();
+function mostraAdmin(){admBox.hidden=false;conn.hidden=!!CFG;edit.hidden=!CFG;renderAdmin()}
+function renderAdmin(){
+  if(!CFG)return;
+  const pre=cy+'-'+pad(cm+1)+'-',l=document.getElementById('admLista');l.innerHTML='';let n=0;
+  Object.keys(EVENTOS).sort().filter(k=>k.startsWith(pre)).forEach(k=>EVENTOS[k].forEach(ev=>{
+    n++;const li=document.createElement('li');li.textContent='Dia '+Number(k.slice(8))+': '+ev.t+' ('+(ev.tipo==='camp'?'campeonato':'treino')+')';
+    const b=document.createElement('button');b.type='button';b.textContent='Remover';
+    b.onclick=()=>salvar(o=>{const a=o[k]||[],i=a.findIndex(x=>x.t===ev.t&&x.tipo===ev.tipo);if(i>=0)a.splice(i,1);if(!a.length)delete o[k]});
+    li.appendChild(b);l.appendChild(li)}));
+  if(!n){const li=document.createElement('li');li.textContent='Nenhum evento neste mês para editar.';l.appendChild(li)}
+}
+function ghFetch(c,method,body){
+  const u='https://api.github.com/repos/'+encodeURIComponent(c.o)+'/'+encodeURIComponent(c.r)+'/contents/index.html'+(method==='GET'?'?ref='+encodeURIComponent(c.b):'');
+  return fetch(u,{method,headers:{'Authorization':'Bearer '+c.t,'Accept':'application/vnd.github+json'},body:body?JSON.stringify(body):undefined});
+}
+async function salvar(mut){
+  const msg=document.getElementById('admMsg');msg.textContent='Salvando...';
+  try{
+    const g=await ghFetch(CFG,'GET');
+    if(!g.ok)throw new Error('http '+g.status);
+    const j=await g.json(),sha=j.sha,txt=decodeURIComponent(escape(atob(j.content.replace(/\n/g,''))));
+    const ini='<scr'+'ipt type="application/json" id="dados-eventos">',fim='</scr'+'ipt>';
+    const a=txt.indexOf(ini);if(a<0)throw new Error('http 422');
+    const a2=a+ini.length,b=txt.indexOf(fim,a2);
+    let base={};try{base=JSON.parse(txt.slice(a2,b)||'{}')}catch(e){}
+    mut(base);
+    const novo=txt.slice(0,a2)+JSON.stringify(base).replace(/</g,'\\u003c')+txt.slice(b);
+    const content=btoa(unescape(encodeURIComponent(novo)));
+    const p=await ghFetch(CFG,'PUT',{message:'Atualiza calendário',content,branch:CFG.b,sha});
+    if(!p.ok)throw new Error('http '+p.status);
+    EVENTOS=base;desenha();
+    msg.textContent='Salvo! Para os visitantes, pode levar alguns minutos para aparecer.';
+  }catch(e){
+    const c=(e.message||'').replace('http ','');
+    msg.textContent=(c==='401'||c==='403'||c==='404')?'Sem permissão ou token inválido. Confira o token e o repositório.':(c==='409'||c==='422')?'Alguém salvou ao mesmo tempo. Tente de novo.':'Não foi possível salvar. Tente de novo.';
+  }
+}
+conn.addEventListener('submit',async e=>{
+  e.preventDefault();const m=document.getElementById('connMsg');
+  const c={o:gUser.value.trim(),r:gRepo.value.trim(),b:gBranch.value.trim()||'main',t:gToken.value.trim()};
+  if(!c.o||!c.r||!c.t){m.textContent='Preencha usuário, repositório e token.';return}
+  m.textContent='Verificando...';
+  try{
+    const r=await fetch('https://api.github.com/repos/'+encodeURIComponent(c.o)+'/'+encodeURIComponent(c.r),{headers:{'Authorization':'Bearer '+c.t,'Accept':'application/vnd.github+json'}});
+    const j=r.ok?await r.json():null;
+    if(!j||(j.permissions&&!j.permissions.push)){m.textContent='Esse token não tem permissão de escrita neste repositório.';return}
+    CFG=c;try{localStorage.setItem('brcs_gh',JSON.stringify(c))}catch(x){}
+    gToken.value='';m.textContent='';mostraAdmin();
+  }catch(x){m.textContent='Não foi possível conectar. Verifique a internet.'}
+});
+document.getElementById('adm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const d=admData.value,n=admNome.value.trim(),t=admTipo.value;
+  if(!d||!n){admMsg.textContent='Informe a data e o nome do evento.';return}
+  salvar(o=>{(o[d]=o[d]||[]).push({t:n,tipo:t})}).then(()=>{admNome.value=''});
+});
+document.getElementById('gSair').onclick=()=>{try{localStorage.removeItem('brcs_gh')}catch(x){}CFG=null;mostraAdmin()};
+function checaHash(){if(location.hash==='#fundadores'){show('calendario');mostraAdmin()}}
+window.addEventListener('load',checaHash);window.addEventListener('hashchange',checaHash);
 const tabs=[...document.querySelectorAll('[data-tab]')];
 function show(id){
   document.querySelectorAll('main section').forEach(s=>s.hidden=s.id!==id);
@@ -209,7 +410,7 @@ function show(id){
 tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
 const form=document.getElementById('ficha'),MAIL="matheusviniciusbarbierisilva@gmail.com";
-const L={nome:"Nome completo",nasc:"Data de nascimento / idade",local:"Localidade (cidade/UF)",epic:"Epic Games ID",nick:"Nickname no Rocket League",plat:"Plataforma de desempenho",rank:"Rank atual / máximo",funcao:"Função primária em campo",disp:"Disponibilidade de horários",carta:"Carta de intenção"};
+const L={nome:"Nome completo",nasc:"Data de nascimento / idade",local:"Localidade (cidade/UF)",contato:"Telefone (WhatsApp) ou rede social",epic:"Epic Games ID",nick:"Nickname no Rocket League",plat:"Plataforma de desempenho",rank:"Rank atual / máximo",funcao:"Função primária em campo",disp:"Disponibilidade de horários",carta:"Carta de intenção"};
 function dados(){const f=new FormData(form),o={};for(const k in L)o[k]=(f.get(k)||"").toString().trim();return o}
 function valida(){
   const o=dados(),falta=[];
