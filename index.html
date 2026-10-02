@@ -93,6 +93,22 @@ form input.bad,form .opts.bad{border-color:var(--accent);outline:2px solid var(-
 input[type=date],form select{display:block;margin-top:6px;padding:10px 12px;background:#000;color:var(--ink);border:1px solid #666;border-radius:4px;font:inherit;color-scheme:dark}
 #admLista button{margin-left:10px;background:none;border:1px solid var(--ink);color:var(--ink);border-radius:4px;cursor:pointer;font:inherit;font-size:13px;padding:2px 8px}
 .linklike{background:none;border:0;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;margin-top:8px}
+.nav-sm{}
+nav button{padding:8px 9px;font-size:14px}
+.livebar{display:block;max-width:560px;background:var(--accent);color:#000;font:800 22px "Barlow Condensed",sans-serif;padding:10px 16px;margin:0 0 16px;text-decoration:none;border-radius:4px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:20px 0;max-width:640px}
+.stats div{background:var(--panel);border:1px solid var(--line);padding:12px;text-align:center}
+.stats b{display:block;font:800 36px "Barlow Condensed",sans-serif;color:var(--accent)}
+.match{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.match .res{font:800 18px "Barlow Condensed",sans-serif;padding:2px 10px;border-radius:3px}
+.res.v{background:var(--accent);color:#000}.res.d{border:1px solid #fff}.res.e{border:1px dashed #fff}
+.match .pl{font:800 28px "Barlow Condensed",sans-serif}
+.clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:20px 0}
+.clips iframe{width:100%;aspect-ratio:16/9;border:0;background:#000}
+.clips h3{font-size:24px;margin:8px 0}
+.kit{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.crest{width:200px}.crest svg{width:100%;height:auto}
+.kitbtns{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
 .timeline{border-left:3px solid var(--accent);padding-left:24px;margin-top:28px}
 .timeline h3{font-size:28px}
 .timeline p{margin:6px 0 0;color:var(--muted)}
@@ -114,8 +130,11 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
     <button role="tab" data-tab="historia" aria-selected="false">Nossa história</button>
     <button role="tab" data-tab="jogadores" aria-selected="false">Jogadores</button>
     <button role="tab" data-tab="calendario" aria-selected="false">Campeonatos/Calendário</button>
+    <button role="tab" data-tab="partidas" aria-selected="false">Partidas</button>
+    <button role="tab" data-tab="midia" aria-selected="false">Clips &amp; Lives</button>
     <button role="tab" data-tab="titulos" aria-selected="false">Títulos</button>
     <button role="tab" data-tab="participar" aria-selected="false">Quero participar</button>
+    <button role="tab" data-tab="parceiros" aria-selected="false">Parceiros &amp; Media Kit</button>
     <button role="tab" data-tab="pro" aria-selected="false">BRCS ANR PROFISSIONAL</button>
   </nav>
 </div></header>
@@ -125,7 +144,9 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
   <span class="badge">Time amador de Rocket League · fundado em 29/09/2026</span>
   <h1>Comunidade<br><em>BRCS ANR</em></h1>
   <p>Nascemos no bairro Ana Rosa, em Cambé-PR, e hoje miramos o topo do Rocket League amador. Estamos começando agora e queremos crescer junto com quem chegar.</p>
+  <a id="liveBanner" class="livebar" hidden target="_blank" rel="noopener"></a>
   <button class="btn" data-go="participar">Quero participar</button>
+  <a id="discordBtn" class="btn ghost" target="_blank" rel="noopener">Entrar no Discord</a>
 </section>
  
 <section id="historia" hidden>
@@ -200,6 +221,37 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
   </div>
   <h3 class="sub">Eventos do mês</h3>
   <ul class="steps" id="evlist"></ul>
+</section>
+ 
+<section id="partidas" hidden>
+  <h2>Partidas</h2>
+  <p>Resultados dos últimos jogos da Comunidade BRCS ANR.</p>
+  <div class="stats" id="pStats"></div>
+  <div class="timeline" id="pLista"></div>
+</section>
+ 
+<section id="midia" hidden>
+  <h2>Clips &amp; Lives</h2>
+  <h3 class="sub" style="margin-top:0">Transmissões ao vivo</h3>
+  <div id="streams"></div>
+  <h3 class="sub">Galeria de clips e highlights</h3>
+  <p>As melhores jogadas, redirecionamentos e defesas milagrosas do time.</p>
+  <div class="clips" id="clips"></div>
+</section>
+ 
+<section id="parceiros" hidden>
+  <h2>Parceiros &amp; Media Kit</h2>
+  <h3 class="sub" style="margin-top:0">Patrocinadores e apoiadores</h3>
+  <div class="roster" id="spons"></div>
+  <h3 class="sub">Pacote de identidade (Media Kit)</h3>
+  <p>Baixe o escudo do time e os papéis de parede para usar no celular ou no PC.</p>
+  <div class="kit"><div id="crest" class="crest" aria-label="Escudo da Comunidade BRCS ANR"></div>
+    <div class="kitbtns">
+      <button type="button" class="btn" data-kit="svg">Escudo (SVG, vetor)</button>
+      <button type="button" class="btn" data-kit="png">Escudo (PNG, alta resolução)</button>
+      <button type="button" class="btn" data-kit="cel">Papel de parede celular</button>
+      <button type="button" class="btn" data-kit="pc">Papel de parede PC</button>
+    </div></div>
 </section>
  
 <section id="titulos" hidden>
@@ -278,13 +330,13 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
 <script type="application/json" id="dados-eventos">{}</script>
 <script>
 const PLAYERS=[
-  {nome:"BRCSMatheuzin",funcao:"Jogador Principal / Fundador",estilo:"Criador de jogadas e controle de bola no chão."},
-  {nome:"BRCS_l DARK l157",funcao:"Jogador Principal / Fundador",estilo:"Especialista em aéreos, velocidade e finalizações."}
+  {nome:"BRCSMatheuzin",funcao:"Jogador Principal / Fundador",estilo:"Criador de jogadas e controle de bola no chão.",elo:"A definir",pos:"A definir",carro:"A definir"},
+  {nome:"BRCS_l DARK l157",funcao:"Jogador Principal / Fundador",estilo:"Especialista em aéreos, velocidade e finalizações.",elo:"A definir",pos:"A definir",carro:"A definir"}
   // Para adicionar um novo jogador, copie uma linha acima e preencha os dados.
 ];
 const roster=document.getElementById('roster');
 function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
-roster.innerHTML=PLAYERS.map(j=>`<article class="player"><h3>${esc(j.nome)}</h3><dl><dt>Função</dt><dd>${esc(j.funcao)}</dd><dt>Estilo de jogo</dt><dd>${esc(j.estilo)}</dd></dl></article>`).join('')+'<article class="player open"><h3>Vaga aberta</h3></article>';
+roster.innerHTML=PLAYERS.map(j=>`<article class="player"><h3>${esc(j.nome)}</h3><dl><dt>Função</dt><dd>${esc(j.funcao)}</dd><dt>Estilo de jogo</dt><dd>${esc(j.estilo)}</dd><dt>Elo atual</dt><dd>${esc(j.elo||'A definir')}</dd><dt>Posição favorita</dt><dd>${esc(j.pos||'A definir')}</dd><dt>Carro principal</dt><dd>${esc(j.carro||'A definir')}</dd></dl></article>`).join('')+'<article class="player open"><h3>Vaga aberta</h3></article>';
 let EVENTOS={};try{EVENTOS=JSON.parse(document.getElementById('dados-eventos').textContent||'{}')}catch(e){}
 const MESES=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 const DIAS=["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
@@ -404,6 +456,71 @@ document.getElementById('adm').addEventListener('submit',e=>{
 document.getElementById('gSair').onclick=()=>{try{localStorage.removeItem('brcs_gh')}catch(x){}CFG=null;mostraAdmin()};
 function checaHash(){if(location.hash==='#fundadores'){show('calendario');mostraAdmin()}}
 window.addEventListener('load',checaHash);window.addEventListener('hashchange',checaHash);
+ 
+// Conteúdo do site: peça para atualizar estes dados (ou edite aqui).
+const CONTEUDO={
+  discord:"",
+  live:{ativo:false,nome:"",url:""},
+  streams:[],      // {nome:"Canal", url:"https://..."}
+  partidas:[],     // {data:"2026-10-10", adv:"Time X", nosso:3, deles:1, competicao:"ESL"}
+  clips:[],        // {titulo:"Defesa milagrosa", url:"link do YouTube ou Twitch"}
+  patrocinadores:[]// {nome:"Loja X", site:"https://..."}
+};
+const vazio=t=>'<p style="color:var(--muted)">'+t+'</p>';
+// Discord e live na página inicial
+(function(){
+  const d=document.getElementById('discordBtn');
+  if(CONTEUDO.discord){d.href=CONTEUDO.discord}else{d.removeAttribute('href');d.textContent='Discord em breve';d.style.opacity='.6';d.style.cursor='default'}
+  const L=CONTEUDO.live,b=document.getElementById('liveBanner');
+  if(L.ativo&&/^https?:\/\//.test(L.url)){b.hidden=false;b.href=L.url;b.textContent='● AO VIVO agora'+(L.nome?': '+L.nome:'')+' · assistir'}
+})();
+// Partidas
+(function(){
+  const P=CONTEUDO.partidas.slice().sort((a,b)=>b.data.localeCompare(a.data));
+  const v=P.filter(m=>m.nosso>m.deles).length,dd=P.filter(m=>m.nosso<m.deles).length;
+  document.getElementById('pStats').innerHTML=[['Jogos',P.length],['Vitórias',v],['Derrotas',dd],['Aproveitamento',P.length?Math.round(v/P.length*100)+'%':'-']].map(x=>'<div><b>'+x[1]+'</b>'+x[0]+'</div>').join('');
+  document.getElementById('pLista').innerHTML=P.length?P.map(m=>{const r=m.nosso>m.deles?['v','Vitória']:m.nosso<m.deles?['d','Derrota']:['e','Empate'],[a,b,c]=m.data.split('-');
+    return '<div class="match"><span class="res '+r[0]+'">'+r[1]+'</span><span class="pl">BRCS ANR '+Number(m.nosso)+' x '+Number(m.deles)+' '+esc(m.adv)+'</span><span style="color:var(--muted)">'+c+'/'+b+'/'+a+(m.competicao?' · '+esc(m.competicao):'')+'</span></div>'}).join(''):vazio('Ainda não temos partidas registradas. Os resultados aparecerão aqui.');
+})();
+// Streams e clips
+(function(){
+  const S=CONTEUDO.streams,L=CONTEUDO.live,box=document.getElementById('streams');let h='';
+  if(L.ativo&&/^https?:\/\//.test(L.url))h+='<p><b style="color:var(--accent)">● AO VIVO agora</b> '+esc(L.nome||'')+'</p><a class="btn" target="_blank" rel="noopener" href="'+esc(L.url)+'">Assistir ao vivo</a>';
+  else h+=vazio('Nenhuma transmissão ao vivo no momento.');
+  if(S.length)h+='<p style="margin-top:16px">Onde nos acompanhar:</p>'+S.filter(x=>/^https?:\/\//.test(x.url)).map(x=>'<a class="btn ghost" style="margin:0 8px 8px 0" target="_blank" rel="noopener" href="'+esc(x.url)+'">'+esc(x.nome)+'</a>').join('');
+  box.innerHTML=h;
+  const C=CONTEUDO.clips;
+  document.getElementById('clips').innerHTML=C.length?C.map(c=>{
+    const y=(c.url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([\w-]{11})/)||[])[1],t=(c.url.match(/clips\.twitch\.tv\/([\w-]+)|twitch\.tv\/\w+\/clip\/([\w-]+)/)||[]);
+    const id=t[1]||t[2],src=y?'https://www.youtube.com/embed/'+y:id?'https://clips.twitch.tv/embed?clip='+id+'&parent='+location.hostname:'';
+    return '<div>'+(src?'<iframe src="'+src+'" loading="lazy" allowfullscreen title="'+esc(c.titulo)+'"></iframe>':'')+'<h3>'+esc(c.titulo)+'</h3>'+(src?'':'<a href="'+esc(c.url)+'" target="_blank" rel="noopener" style="color:var(--ink)">Assistir</a>')+'</div>'}).join(''):vazio('Em breve: as melhores jogadas do time.');
+})();
+// Patrocinadores
+(function(){
+  const P=CONTEUDO.patrocinadores,mail="mailto:matheusviniciusbarbierisilva@gmail.com?subject="+encodeURIComponent("Apoio à Comunidade BRCS ANR");
+  document.getElementById('spons').innerHTML=P.map(p=>'<article class="player"><h3>'+esc(p.nome)+'</h3>'+(/^https?:\/\//.test(p.site||'')?'<a style="color:var(--ink)" target="_blank" rel="noopener" href="'+esc(p.site)+'">Visitar site</a>':'')+'</article>').join('')+'<article class="player open"><div><h3>Seja um apoiador</h3><p>Marcas e comércios do bairro são bem-vindos.</p><a class="btn" href="'+mail+'">Falar com a diretoria</a></div></article>';
+})();
+// Media kit
+function crestSVG(){const f='font-family="Impact,Arial Black,sans-serif" text-anchor="middle" fill="#ff7a00"';return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 600"><path d="M256 20 L480 90 V300 C480 430 380 520 256 580 C132 520 32 430 32 300 V90 Z" fill="#000" stroke="#ff7a00" stroke-width="22" stroke-linejoin="round"/><text x="256" y="270" '+f+' font-size="120">BRCS</text><text x="256" y="390" '+f+' font-size="120">ANR</text><text x="256" y="460" font-family="Arial,sans-serif" text-anchor="middle" font-size="30" letter-spacing="6" fill="#fff">EST. 2026</text></svg>'}
+document.getElementById('crest').innerHTML=crestSVG();
+function baixar(blob,nome){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=nome;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),3000)}
+function crestImg(){return new Promise((ok,er)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=er;i.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(crestSVG())})}
+async function pngKit(w,h,papel,nome){
+  const img=await crestImg(),c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');
+  if(!papel){x.drawImage(img,0,0,w,h)}
+  else{x.fillStyle='#000';x.fillRect(0,0,w,h);const cw=Math.min(w*.6,h*.5*512/600),ch=cw*600/512;
+    x.drawImage(img,(w-cw)/2,h*.5-ch*.6,cw,ch);x.textAlign='center';x.fillStyle='#fff';
+    x.font=Math.round(w*.05)+'px Impact,Arial Black,sans-serif';x.fillText('COMUNIDADE BRCS ANR',w/2,h*.5+ch*.6);
+    x.fillStyle='#ff7a00';x.font=Math.round(w*.035)+'px Arial,sans-serif';x.fillText('#BRCSANR',w/2,h*.5+ch*.6+w*.06)}
+  c.toBlob(b=>baixar(b,nome),'image/png');
+}
+document.querySelectorAll('[data-kit]').forEach(b=>b.addEventListener('click',()=>{
+  const k=b.dataset.kit;
+  if(k==='svg')baixar(new Blob([crestSVG()],{type:'image/svg+xml'}),'brcs-anr-escudo.svg');
+  if(k==='png')pngKit(2048,2400,false,'brcs-anr-escudo.png');
+  if(k==='cel')pngKit(1080,1920,true,'brcs-anr-wallpaper-celular.png');
+  if(k==='pc')pngKit(1920,1080,true,'brcs-anr-wallpaper-pc.png');
+}));
 const tabs=[...document.querySelectorAll('[data-tab]')];
 function show(id){
   document.querySelectorAll('main section').forEach(s=>s.hidden=s.id!==id);
