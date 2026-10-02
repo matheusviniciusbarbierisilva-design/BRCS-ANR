@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 512 600%27%3E%3Cpath d=%27M256 20 L480 90 V300 C480 430 380 520 256 580 C132 520 32 430 32 300 V90 Z%27 fill=%27%23000%27 stroke=%27%23ff7a00%27 stroke-width=%2740%27/%3E%3Ctext x=%27256%27 y=%27390%27 text-anchor=%27middle%27 font-family=%27Arial Black,Impact,sans-serif%27 font-size=%27300%27 fill=%27%23ff7a00%27%3EB%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon-180.png">
 <title>Comunidade BRCS ANR | Time amador de Rocket League em Cambé-PR</title>
 <meta name="google-site-verification" content="iqhQz7IYAoiorvPWVN67MEc1hDxVMy5nbKcGcFylxRQ" />
 <link rel="canonical" href="https://matheusviniciusbarbierisilva-design.github.io/BRCS-ANR/">
@@ -16,7 +17,11 @@
 <meta property="og:site_name" content="Comunidade BRCS ANR">
 <meta property="og:title" content="Comunidade BRCS ANR | Time amador de Rocket League">
 <meta property="og:description" content="Comunidade BRCS ANR: time amador de Rocket League nascido no bairro Ana Rosa, em Cambé-PR. Conheça nossa história, jogadores, campeonatos e participe do processo seletivo.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://matheusviniciusbarbierisilva-design.github.io/BRCS-ANR/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://matheusviniciusbarbierisilva-design.github.io/BRCS-ANR/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsTeam","name":"Comunidade BRCS ANR","alternateName":"BRCS ANR","sport":"Rocket League (eSports)","description":"Time amador de Rocket League nascido no bairro Ana Rosa, em Cambé, Paraná.","foundingDate":"2026-09-29","location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Cambé","addressRegion":"PR","addressCountry":"BR"}}}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap">
 <style>
@@ -33,7 +38,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);bor
 .bar{max-width:1000px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .logo{font:800 26px "Barlow Condensed",sans-serif;letter-spacing:.5px}
 .logo span{color:var(--accent)}
-nav{display:flex;gap:4px;flex-wrap:wrap}
+nav{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:thin}
+nav button{flex:none;white-space:nowrap}
 nav button{background:none;border:0;color:var(--muted);font:500 15px Barlow,sans-serif;padding:8px 12px;border-bottom:2px solid transparent;cursor:pointer}
 nav button:hover{color:var(--ink)}
 nav button[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
@@ -109,6 +115,60 @@ nav button{padding:8px 9px;font-size:14px}
 .kit{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:16px}
 .crest{width:200px}.crest svg{width:100%;height:auto}
 .kitbtns{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.bar2{height:8px;background:var(--line);margin-top:6px}.bar2 i{display:block;height:100%;background:var(--accent)}
+.quote{font-size:16px;overflow-wrap:anywhere}.quote b{display:block;color:var(--accent);font:800 22px "Barlow Condensed",sans-serif}
+.poll label{display:block;margin:8px 0;font-weight:400}.poll input{accent-color:var(--accent);margin-right:8px}
+#gcal iframe{width:100%;height:600px;border:1px solid var(--line);background:#fff}
+.contagem{background:var(--panel);border-left:3px solid var(--accent);padding:12px 16px;margin:0 0 16px;max-width:560px;font-size:20px}
+.contagem b{font:800 36px "Barlow Condensed",sans-serif;color:var(--accent)}
+.cl{display:block;color:var(--muted);font-size:14px}
+.post{border-left:3px solid var(--accent);padding-left:18px;margin-bottom:28px}
+.post h3{font-size:30px}.post small{color:var(--muted)}
+.qrbox{background:#fff;display:inline-block;padding:12px;margin:12px 0}.qrbox svg{width:200px;height:200px;display:block}
+.pixcode{background:var(--panel);border:1px solid var(--line);padding:12px;font-family:monospace;font-size:13px;word-break:break-all;max-width:560px}
+.mock svg{width:100%;height:auto}
+img,svg,iframe{max-width:100%}
+.redes{display:flex;gap:14px;justify-content:center;margin:12px 0}
+.redes a,.redes span{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.redes a:hover{border-color:var(--accent);color:var(--accent)}.redes .off{opacity:.4}
+.redes svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.flinks button{background:none;border:0;color:var(--ink);text-decoration:underline;cursor:pointer;font:inherit;font-size:14px}
+footer small{display:block;max-width:640px;margin:10px auto 0}
+.chk{display:flex!important;gap:8px;align-items:flex-start;font-weight:400!important}
+.chk input{margin-top:5px;accent-color:var(--accent)}
+.chk .linklike{margin:0;color:var(--accent);font-size:inherit}
+@media(max-width:600px){
+ body{font-size:16px}
+ main{padding:32px 16px 64px}
+ .bar{padding:10px 14px;gap:8px}
+ .btn{margin:0 8px 8px 0}.btn.ghost{margin-left:0}
+ .hero p{font-size:17px}
+ form fieldset{padding:12px 14px 16px}
+ .sub{font-size:28px}
+ .kitbtns{width:100%}.kitbtns .btn{width:100%}
+ #gcal iframe{height:420px}
+}
+.btn-membros{margin-left:auto;background:transparent;color:#ff8a1f;border:1px solid #ff8a1f;padding:8px 16px;border-radius:4px;font:600 17px "Barlow Condensed",sans-serif;cursor:pointer;box-shadow:0 0 10px rgba(255,122,0,.4),inset 0 0 8px rgba(255,122,0,.15);text-shadow:0 0 8px rgba(255,122,0,.6);transition:background .2s,color .2s}
+.btn-membros:hover,.btn-membros:focus-visible{background:#ff7a00;color:#000;text-shadow:none}
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.modal[hidden]{display:none}
+.modal-box{position:relative;width:100%;max-width:420px;max-height:92vh;overflow:auto;background:#0a0a0a;border:1px solid #ff7a00;border-radius:12px;padding:34px 28px 28px;box-shadow:0 0 0 1px rgba(255,122,0,.25),0 0 40px rgba(255,122,0,.35),inset 0 0 30px rgba(255,122,0,.06);animation:mmIn .25s ease;outline:none}
+@keyframes mmIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.modal-box{animation:none}}
+.modal-box h2{font-size:42px;margin-bottom:8px;color:#fff;text-shadow:0 0 14px rgba(255,122,0,.55)}
+.modal-x{position:absolute;top:8px;right:12px;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer;padding:4px 8px}
+.modal-x:hover{color:#ff8a1f}
+.mm-sub{color:var(--muted);margin:0 0 8px}
+.modal-box input{display:block;width:100%;margin-top:6px;padding:12px;background:#000;color:#fff;border:1px solid #555;border-radius:6px;font:inherit}
+.modal-box input:focus{outline:none;border-color:#ff7a00;box-shadow:0 0 0 3px rgba(255,122,0,.3)}
+#mmErro,#mmAviso{min-height:1.4em;color:#ff8a1f;margin:12px 0 4px;font-size:15px}
+#mmEntrar{width:100%;margin:6px 0 0;box-shadow:0 0 18px rgba(255,122,0,.5)}
+#mmEntrar[disabled]{opacity:.6;cursor:wait}
+#mmReset{display:block;margin:14px auto 0}
+.mm-badge{display:inline-block;border:1px solid #ff7a00;color:#ff8a1f;border-radius:99px;padding:3px 12px;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 10px rgba(255,122,0,.35)}
+.mm-id{font:800 30px "Barlow Condensed",sans-serif;color:#ff8a1f;text-shadow:0 0 14px rgba(255,122,0,.6);margin:6px 0 16px}
+.mm-dados{margin:0 0 12px}.mm-dados dt{font-weight:500;margin-top:10px}.mm-dados dd{margin:2px 0 0;color:var(--muted);overflow-wrap:anywhere}
 .timeline{border-left:3px solid var(--accent);padding-left:24px;margin-top:28px}
 .timeline h3{font-size:28px}
 .timeline p{margin:6px 0 0;color:var(--muted)}
@@ -125,16 +185,25 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
 <body>
 <header><div class="bar">
   <div class="logo"><span>BRCS ANR</span></div>
+  <button type="button" class="btn-membros" id="btnMembros" aria-haspopup="dialog">Área de Membros</button>
   <nav role="tablist" aria-label="Seções">
     <button role="tab" data-tab="inicio" aria-selected="true">Início</button>
     <button role="tab" data-tab="historia" aria-selected="false">Nossa história</button>
     <button role="tab" data-tab="jogadores" aria-selected="false">Jogadores</button>
     <button role="tab" data-tab="calendario" aria-selected="false">Campeonatos/Calendário</button>
     <button role="tab" data-tab="partidas" aria-selected="false">Partidas</button>
+    <button role="tab" data-tab="custom" aria-selected="false">Customização</button>
+    <button role="tab" data-tab="stats" aria-selected="false">Estatísticas</button>
     <button role="tab" data-tab="midia" aria-selected="false">Clips &amp; Lives</button>
     <button role="tab" data-tab="titulos" aria-selected="false">Títulos</button>
     <button role="tab" data-tab="participar" aria-selected="false">Quero participar</button>
+    <button role="tab" data-tab="torcida" aria-selected="false">Torcida</button>
+    <button role="tab" data-tab="regras" aria-selected="false">Regulamento</button>
+    <button role="tab" data-tab="apoio" aria-selected="false">Apoie o time</button>
+    <button role="tab" data-tab="noticias" aria-selected="false">Notícias</button>
     <button role="tab" data-tab="parceiros" aria-selected="false">Parceiros &amp; Media Kit</button>
+    <button role="tab" data-tab="contato" aria-selected="false">Contato</button>
+    <button role="tab" data-tab="privacidade" aria-selected="false">Privacidade &amp; Termos</button>
     <button role="tab" data-tab="pro" aria-selected="false">BRCS ANR PROFISSIONAL</button>
   </nav>
 </div></header>
@@ -144,6 +213,7 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
   <span class="badge">Time amador de Rocket League · fundado em 29/09/2026</span>
   <h1>Comunidade<br><em>BRCS ANR</em></h1>
   <p>Nascemos no bairro Ana Rosa, em Cambé-PR, e hoje miramos o topo do Rocket League amador. Estamos começando agora e queremos crescer junto com quem chegar.</p>
+  <div id="contagem" class="contagem" aria-live="off"></div>
   <a id="liveBanner" class="livebar" hidden target="_blank" rel="noopener"></a>
   <button class="btn" data-go="participar">Quero participar</button>
   <a id="discordBtn" class="btn ghost" target="_blank" rel="noopener">Entrar no Discord</a>
@@ -216,11 +286,19 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
         </fieldset>
       </form>
       <ul class="steps" id="admLista"></ul>
+      <form id="admM" novalidate><fieldset><legend>Mural da torcida (publicar recado aprovado)</legend>
+        <label>Nome<input id="mNome" maxlength="40"></label>
+        <label>Recado<textarea id="mTxt" rows="3" maxlength="240"></textarea></label>
+        <p id="mMsg" role="status" style="color:var(--accent);margin:12px 0 0"></p>
+        <button type="submit" class="btn" style="margin-top:12px">Publicar recado</button></fieldset></form>
+      <ul class="steps" id="mLista"></ul>
       <button type="button" class="btn ghost" id="gSair" style="margin-left:0">Desconectar deste aparelho</button>
     </div>
   </div>
   <h3 class="sub">Eventos do mês</h3>
   <ul class="steps" id="evlist"></ul>
+  <h3 class="sub">Agenda Google (treinos, campeonatos e reuniões)</h3>
+  <div id="gcal"></div>
 </section>
  
 <section id="partidas" hidden>
@@ -252,6 +330,76 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
       <button type="button" class="btn" data-kit="cel">Papel de parede celular</button>
       <button type="button" class="btn" data-kit="pc">Papel de parede PC</button>
     </div></div>
+</section>
+ 
+<section id="stats" hidden>
+  <h2>Estatísticas &amp; Competitivo</h2>
+  <h3 class="sub" style="margin-top:0">Linha de evolução</h3>
+  <p>Rank atual de cada jogador nos modos 3v3 e 2v2 e o pico de MMR na temporada.</p>
+  <div class="roster" id="evo"></div>
+  <h3 class="sub">Estatísticas coletivas da temporada</h3>
+  <p style="color:var(--muted)">Números acumulados em campeonatos oficiais.</p>
+  <div class="stats" id="coletivas"></div>
+  <h3 class="sub">Histórico de transferências</h3>
+  <div class="timeline" id="transf"></div>
+</section>
+ 
+<section id="torcida" hidden>
+  <h2>Torcida</h2>
+  <h3 class="sub" style="margin-top:0">Mural da torcida</h3>
+  <p>Deixe uma mensagem de apoio para o time. Os recados são enviados à diretoria e aparecem aqui depois de aprovados.</p>
+  <form id="fMural" novalidate><fieldset><legend>Deixar recado</legend>
+    <label>Seu nome<input id="muNome" maxlength="40"></label>
+    <label>Mensagem<textarea id="muTxt" rows="3" maxlength="240"></textarea></label>
+    <p id="muMsg" role="status" style="color:var(--accent);margin:12px 0 0"></p>
+    <button type="submit" class="btn" style="margin-top:12px">Enviar recado</button></fieldset></form>
+  <div class="roster" id="muLista"></div>
+  <h3 class="sub">Enquete: MVP da semana</h3>
+  <div id="enquete"></div>
+</section>
+ 
+<section id="regras" hidden>
+  <h2>Regulamento interno</h2>
+  <p>Manual de conduta da Comunidade BRCS ANR, válido para todos os membros.</p>
+  <div class="meaning">
+    <div><h3>1. Conduta em partida</h3><p>Respeito a companheiros, adversários e árbitros. Zero tolerância a trapaça, uso de bugs e abandono de partida sem aviso.</p></div>
+    <div><h3>2. Toxicidade</h3><p>Não são aceitos xingamentos, discriminação, ofensas pessoais ou provocações, dentro ou fora do jogo, enquanto representar a tag BRCS ANR. Derrotas se discutem com crítica construtiva.</p></div>
+    <div><h3>3. Compromisso com treinos</h3><p>Presença e pontualidade nos treinos (scrims) e campeonatos. Faltas devem ser avisadas com antecedência à diretoria.</p></div>
+    <div><h3>4. Comunicação</h3><p>Calls claras e objetivas, sem gritar ou culpar. Combinados e avisos importantes ficam registrados no Discord do time.</p></div>
+    <div><h3>5. Uso da tag e da imagem</h3><p>A tag BRCS ANR e o escudo só podem ser usados por membros, de forma que represente bem o time.</p></div>
+    <div><h3>6. Medidas disciplinares</h3><p>Advertência, suspensão de partidas e, em casos graves ou reincidentes, desligamento, decididos pelos fundadores.</p></div>
+  </div>
+  <p style="color:var(--muted)">Este regulamento pode ser atualizado pela diretoria.</p>
+  <h3 class="sub">Formulário de feedback</h3>
+  <p>Sugestões de melhoria para a administração do time.</p>
+  <div id="fbBox"></div>
+</section>
+ 
+<section id="custom" hidden>
+  <h2>Customização &amp; Identidade</h2>
+  <h3 class="sub" style="margin-top:0">Acessórios e carros favoritos</h3>
+  <div class="roster" id="cItens"></div>
+  <h3 class="sub">Códigos de treino do time</h3>
+  <p>Custom Training Packs que os jogadores criaram ou usam para aquecer.</p>
+  <div class="roster" id="cTreino"></div>
+  <h3 class="sub">Câmera e controles</h3>
+  <p>Configurações de cada membro do time para você copiar.</p>
+  <div class="roster" id="cCam"></div>
+</section>
+ 
+<section id="apoio" hidden>
+  <h2>Apoie o time</h2>
+  <p>Ajude a Comunidade BRCS ANR a pagar inscrições em campeonatos. Qualquer contribuição é muito bem-vinda e nos ajuda a seguir competindo.</p>
+  <div id="pix"></div>
+  <h3 class="sub">Loja do time (conceito)</h3>
+  <p>Um gostinho do que vem por aí. Os itens abaixo são mockups conceituais e ainda não estão à venda.</p>
+  <div class="roster" id="loja"></div>
+</section>
+ 
+<section id="noticias" hidden>
+  <h2>Notícias</h2>
+  <p>Novidades, contratações, mudanças de line-up e análises do time.</p>
+  <div id="posts"></div>
 </section>
  
 <section id="titulos" hidden>
@@ -308,6 +456,7 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
       <label>Disponibilidade de horários<input name="disp" required placeholder="Ex: Segunda a sexta, das 19h às 22h"></label>
       <label>Carta de intenção<textarea name="carta" rows="5" required placeholder="Justifique brevemente por que você deve ser escolhido para integrar a line-up principal da BRCS ANR."></textarea></label>
     </fieldset>
+    <label class="chk"><input type="checkbox" id="aceite"><span>Li e concordo com a <button type="button" class="linklike" data-go="privacidade">Política de Privacidade</button> e autorizo o uso dos meus dados para o processo seletivo. Se sou menor de 18 anos, tenho autorização de um responsável.</span></label>
     <h3 class="sub">Envio de candidatura</h3>
     <p>Após preencher todos os campos, clique no botão abaixo. O sistema gera a inscrição automaticamente e abre o seu e-mail pronto para o envio à nossa diretoria.</p>
     <p id="erro" role="alert" style="color:var(--accent)"></p>
@@ -318,6 +467,39 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
   </form>
 </section>
  
+<section id="contato" hidden>
+  <h2>Contato comercial</h2>
+  <p>Organizadores de campeonatos, marcas e possíveis patrocinadores: fale com a administração da Comunidade BRCS ANR.</p>
+  <div class="contact">E-mail oficial:<br><a href="mailto:matheusviniciusbarbierisilva@gmail.com" style="color:var(--ink);font-weight:500;text-decoration:underline">matheusviniciusbarbierisilva@gmail.com</a></div>
+  <form id="fContato" novalidate><fieldset><legend>Enviar mensagem</legend>
+    <label>Nome / organização<input id="ctNome" autocomplete="organization"></label>
+    <label>Seu e-mail para resposta<input id="ctMail" type="email" autocomplete="email" style="display:block;width:100%;margin-top:6px;padding:10px 12px;background:#000;color:var(--ink);border:1px solid #666;border-radius:4px;font:inherit"></label>
+    <label>Assunto<select id="ctAssunto"><option>Patrocínio</option><option>Organização de campeonato</option><option>Imprensa / conteúdo</option><option>Outro assunto</option></select></label>
+    <label>Mensagem<textarea id="ctMsg" rows="5"></textarea></label>
+    <p style="font-size:14px;color:var(--muted)">Ao enviar, você concorda com a <button type="button" class="linklike" data-go="privacidade" style="margin:0;color:var(--accent)">Política de Privacidade</button>.</p>
+    <p id="ctRes" role="status" style="color:var(--accent)"></p>
+    <button type="submit" class="btn">Enviar mensagem</button></fieldset></form>
+</section>
+ 
+<section id="privacidade" hidden>
+  <h2>Privacidade &amp; Termos</h2>
+  <h3 class="sub" style="margin-top:0">Política de Privacidade (LGPD)</h3>
+  <div class="meaning">
+    <div><h3>Quem somos</h3><p>A Comunidade BRCS ANR é uma equipe amadora de eSports de Cambé-PR e é a responsável pelo tratamento dos dados descritos aqui. Contato: matheusviniciusbarbierisilva@gmail.com.</p></div>
+    <div><h3>Quais dados coletamos</h3><p>Na ficha de inscrição: nome, data de nascimento ou idade, cidade, telefone ou rede social, Epic Games ID, nickname, plataforma, rank, função em campo, disponibilidade e carta de intenção. Nos formulários de contato, mural, enquete e feedback: nome, e-mail e a mensagem enviada.</p></div>
+    <div><h3>Para que usamos</h3><p>Apenas para o processo seletivo, para avisar sobre aprovação e para responder contatos. Não vendemos nem compartilhamos seus dados com terceiros.</p></div>
+    <div><h3>Como funciona o envio</h3><p>Este site não possui banco de dados. Os formulários abrem o seu aplicativo de e-mail com a mensagem pronta, e os dados chegam somente à diretoria. Recados do mural só aparecem no site depois de aprovados por nós.</p></div>
+    <div><h3>Por quanto tempo guardamos</h3><p>Pelo tempo necessário ao processo seletivo ou ao atendimento. Candidatos não aprovados podem pedir a exclusão dos dados a qualquer momento.</p></div>
+    <div><h3>Seus direitos</h3><p>Conforme a LGPD (Lei 13.709/2018), você pode pedir acesso, correção, exclusão dos seus dados e a revogação do consentimento, escrevendo para o e-mail acima.</p></div>
+    <div><h3>Menores de 18 anos</h3><p>Menores de idade devem ter a autorização de um responsável para se inscrever ou enviar dados ao time.</p></div>
+    <div><h3>Área de Membros</h3><p>Para jogadores aprovados, guardamos nome, e-mail, número de membro e função, usados apenas para o login e a identificação no time. A autenticação e o armazenamento usam o Google Firebase.</p></div>
+    <div><h3>Cookies e hospedagem</h3><p>Não usamos cookies de rastreamento nem anúncios. O site é hospedado no GitHub Pages, que pode registrar dados técnicos de acesso conforme a política da própria plataforma.</p></div>
+  </div>
+  <h3 class="sub">Isenção de responsabilidade</h3>
+  <p>A Comunidade BRCS ANR é uma equipe amadora independente de eSports e não possui vínculo oficial, patrocínio ou associação com a Psyonix ou a Epic Games. Todos os direitos do Rocket League, incluindo nome, marcas e imagens do jogo, pertencem aos seus respectivos proprietários.</p>
+  <p style="color:var(--muted)">Última atualização: 02/10/2026.</p>
+</section>
+ 
 <section id="pro" class="soon" hidden>
   <span class="badge" style="align-self:flex-start">BRCS ANR PROFISSIONAL</span>
   <h2>Coming soon</h2>
@@ -325,7 +507,39 @@ footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;colo
 </section>
 </main>
  
-<footer>© 2026 Comunidade BRCS ANR · Fundada em 29/09/2026</footer>
+<footer>
+  <div class="redes" id="redes"></div>
+  <div class="flinks"><button type="button" data-go="contato">Contato</button><button type="button" data-go="privacidade">Privacidade &amp; Termos</button><button type="button" data-go="parceiros">Parceiros &amp; Media Kit</button></div>
+  <small>© 2026 Comunidade BRCS ANR · Fundada em 29/09/2026. Todos os direitos reservados.</small>
+  <small id="creditos"></small>
+  <small>Equipe amadora independente de eSports, sem vínculo com a Psyonix ou a Epic Games. Rocket League pertence aos seus respectivos proprietários.</small>
+</footer>
+ 
+<!-- ÁREA DE MEMBROS: modal de login e painel do jogador -->
+<div class="modal" id="modalMembros" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mmTitulo" tabindex="-1">
+    <button type="button" class="modal-x" id="mmFechar" aria-label="Fechar">&times;</button>
+    <div id="mmLogin">
+      <h2 id="mmTitulo">Área de Membros</h2>
+      <p class="mm-sub">Acesso exclusivo para jogadores aprovados da BRCS ANR.</p>
+      <form id="mmForm" novalidate>
+        <label>E-mail<input type="email" id="mmEmail" autocomplete="username" inputmode="email" required></label>
+        <label>Senha<input type="password" id="mmSenha" autocomplete="current-password" required></label>
+        <p id="mmErro" role="alert"></p>
+        <button type="submit" class="btn" id="mmEntrar">Entrar</button>
+        <button type="button" class="linklike" id="mmReset">Esqueci minha senha</button>
+      </form>
+    </div>
+    <div id="mmPainel" hidden>
+      <span class="mm-badge">Membro oficial</span>
+      <h2 id="mmBemvindo"></h2>
+      <p class="mm-id" id="mmId"></p>
+      <dl class="mm-dados"><dt>E-mail</dt><dd id="mmDEmail"></dd><dt>Função</dt><dd id="mmDFuncao"></dd></dl>
+      <p id="mmAviso" role="status"></p>
+      <button type="button" class="btn" id="mmSair">Sair</button>
+    </div>
+  </div>
+</div>
  
 <script type="application/json" id="dados-eventos">{}</script>
 <script>
@@ -407,13 +621,16 @@ function renderAdmin(){
     b.onclick=()=>salvar(o=>{const a=o[k]||[],i=a.findIndex(x=>x.t===ev.t&&x.tipo===ev.tipo);if(i>=0)a.splice(i,1);if(!a.length)delete o[k]});
     li.appendChild(b);l.appendChild(li)}));
   if(!n){const li=document.createElement('li');li.textContent='Nenhum evento neste mês para editar.';l.appendChild(li)}
+  const ml=document.getElementById('mLista');ml.innerHTML='';
+  (EVENTOS._mural||[]).forEach((r,i)=>{const li=document.createElement('li');li.textContent=r.n+': '+r.t+' ';const b=document.createElement('button');b.type='button';b.textContent='Remover';
+    b.onclick=()=>salvar(o=>{o._mural=(o._mural||[]).filter(x=>!(x.n===r.n&&x.t===r.t));if(!o._mural.length)delete o._mural},'mMsg');li.appendChild(b);ml.appendChild(li)});
 }
 function ghFetch(c,method,body){
   const u='https://api.github.com/repos/'+encodeURIComponent(c.o)+'/'+encodeURIComponent(c.r)+'/contents/index.html'+(method==='GET'?'?ref='+encodeURIComponent(c.b):'');
   return fetch(u,{method,headers:{'Authorization':'Bearer '+c.t,'Accept':'application/vnd.github+json'},body:body?JSON.stringify(body):undefined});
 }
-async function salvar(mut){
-  const msg=document.getElementById('admMsg');msg.textContent='Salvando...';
+async function salvar(mut,id){
+  const msg=document.getElementById(id||'admMsg');msg.textContent='Salvando...';
   try{
     const g=await ghFetch(CFG,'GET');
     if(!g.ok)throw new Error('http '+g.status);
@@ -427,7 +644,7 @@ async function salvar(mut){
     const content=btoa(unescape(encodeURIComponent(novo)));
     const p=await ghFetch(CFG,'PUT',{message:'Atualiza calendário',content,branch:CFG.b,sha});
     if(!p.ok)throw new Error('http '+p.status);
-    EVENTOS=base;desenha();
+    EVENTOS=base;desenha();if(typeof renderMural==="function")renderMural();
     msg.textContent='Salvo! Para os visitantes, pode levar alguns minutos para aparecer.';
   }catch(e){
     const c=(e.message||'').replace('http ','');
@@ -453,6 +670,11 @@ document.getElementById('adm').addEventListener('submit',e=>{
   if(!d||!n){admMsg.textContent='Informe a data e o nome do evento.';return}
   salvar(o=>{(o[d]=o[d]||[]).push({t:n,tipo:t})}).then(()=>{admNome.value=''});
 });
+document.getElementById('admM').addEventListener('submit',e=>{
+  e.preventDefault();const n=mNome.value.trim(),t=mTxt.value.trim();
+  if(!n||!t){mMsg.textContent='Informe o nome e o recado.';return}
+  salvar(o=>{(o._mural=o._mural||[]).unshift({n,t})},'mMsg').then(()=>{mNome.value='';mTxt.value=''});
+});
 document.getElementById('gSair').onclick=()=>{try{localStorage.removeItem('brcs_gh')}catch(x){}CFG=null;mostraAdmin()};
 function checaHash(){if(location.hash==='#fundadores'){show('calendario');mostraAdmin()}}
 window.addEventListener('load',checaHash);window.addEventListener('hashchange',checaHash);
@@ -464,7 +686,31 @@ const CONTEUDO={
   streams:[],      // {nome:"Canal", url:"https://..."}
   partidas:[],     // {data:"2026-10-10", adv:"Time X", nosso:3, deles:1, competicao:"ESL"}
   clips:[],        // {titulo:"Defesa milagrosa", url:"link do YouTube ou Twitch"}
-  patrocinadores:[]// {nome:"Loja X", site:"https://..."}
+  patrocinadores:[],// {nome:"Loja X", site:"https://..."}
+  evolucao:[       // pico = número de MMR (ou null)
+    {nome:"BRCSMatheuzin",r3:"A definir",r2:"A definir",pico:null},
+    {nome:"BRCS_l DARK l157",r3:"A definir",r2:"A definir",pico:null}],
+  coletivas:{gols:0,assistencias:0,defesas:0},
+  transferencias:[
+    {data:"2026-09-29",tipo:"entrada",nome:"BRCSMatheuzin",obs:"Fundador"},
+    {data:"2026-09-29",tipo:"entrada",nome:"BRCS_l DARK l157",obs:"Fundador"}],
+  googleCalendar:"", // ID da agenda pública do Google
+  enquete:{pergunta:"MVP da semana",opcoes:[{nome:"BRCSMatheuzin",votos:0},{nome:"BRCS_l DARK l157",votos:0}]},
+  feedbackUrl:"",    // link de um Google Forms (feedback anônimo)
+  redes:{instagram:"",tiktok:"",x:"",youtube:""}, // cole o link de cada perfil
+  creditos:"Site e escudo: equipe BRCS ANR",
+  proximaPartida:{data:"",adv:"",competicao:""}, // ex: data:"2026-10-17T20:00"
+  customizacao:[
+    {nome:"BRCSMatheuzin",carro:"A definir",rodas:"A definir",explosao:"A definir",decal:"A definir",trilha:"A definir"},
+    {nome:"BRCS_l DARK l157",carro:"A definir",rodas:"A definir",explosao:"A definir",decal:"A definir",trilha:"A definir"}],
+  treino:[],         // {nome:"Aéreos", codigo:"XXXX-XXXX-XXXX-XXXX", tipo:"Aéreos"}
+  camera:[
+    {nome:"BRCSMatheuzin",fov:"A definir",distancia:"A definir",altura:"A definir",angulo:"A definir",rigidez:"A definir",transicao:"A definir",giro:"A definir",sens:"A definir",deadzone:"A definir",teclas:"A definir"},
+    {nome:"BRCS_l DARK l157",fov:"A definir",distancia:"A definir",altura:"A definir",angulo:"A definir",rigidez:"A definir",transicao:"A definir",giro:"A definir",sens:"A definir",deadzone:"A definir",teclas:"A definir"}],
+  pix:{chave:"",nome:"Comunidade BRCS ANR",cidade:"Cambe"},
+  noticias:[
+    {data:"2026-09-29",titulo:"Nasce a Comunidade BRCS ANR",texto:"Fundamos oficialmente o time no bairro Ana Rosa, em Cambé-PR, com foco no Rocket League amador."},
+    {data:"2026-09-30",titulo:"Abertas as inscrições para o 3º titular",texto:"Estamos recrutando o terceiro atleta para fechar a line-up. Veja o processo seletivo na aba Quero participar."}]
 };
 const vazio=t=>'<p style="color:var(--muted)">'+t+'</p>';
 // Discord e live na página inicial
@@ -500,6 +746,118 @@ const vazio=t=>'<p style="color:var(--muted)">'+t+'</p>';
   const P=CONTEUDO.patrocinadores,mail="mailto:matheusviniciusbarbierisilva@gmail.com?subject="+encodeURIComponent("Apoio à Comunidade BRCS ANR");
   document.getElementById('spons').innerHTML=P.map(p=>'<article class="player"><h3>'+esc(p.nome)+'</h3>'+(/^https?:\/\//.test(p.site||'')?'<a style="color:var(--ink)" target="_blank" rel="noopener" href="'+esc(p.site)+'">Visitar site</a>':'')+'</article>').join('')+'<article class="player open"><div><h3>Seja um apoiador</h3><p>Marcas e comércios do bairro são bem-vindos.</p><a class="btn" href="'+mail+'">Falar com a diretoria</a></div></article>';
 })();
+ 
+function abreMail(assunto,corpo){const a=document.createElement('a');a.href='mailto:'+MAIL+'?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(corpo);a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+// Evolução
+(function(){
+  const E=CONTEUDO.evolucao,max=Math.max(0,...E.map(x=>x.pico||0));
+  document.getElementById('evo').innerHTML=E.map(x=>'<article class="player"><h3>'+esc(x.nome)+'</h3><dl><dt>Rank 3v3</dt><dd>'+esc(x.r3)+'</dd><dt>Rank 2v2</dt><dd>'+esc(x.r2)+'</dd><dt>Pico de MMR na temporada</dt><dd>'+(x.pico?x.pico:'A definir')+'</dd></dl>'+(x.pico&&max?'<div class="bar2"><i style="width:'+Math.round(x.pico/max*100)+'%"></i></div>':'')+'</article>').join('');
+  const C=CONTEUDO.coletivas;
+  document.getElementById('coletivas').innerHTML=[['Gols',C.gols],['Assistências',C.assistencias],['Defesas',C.defesas]].map(x=>'<div><b>'+Number(x[1])+'</b>'+x[0]+'</div>').join('');
+  const T=CONTEUDO.transferencias.slice().sort((a,b)=>b.data.localeCompare(a.data));
+  document.getElementById('transf').innerHTML=T.length?T.map(t=>{const[a,b,c]=t.data.split('-');return '<div class="match"><span class="res '+(t.tipo==='saida'?'d':'v')+'">'+(t.tipo==='saida'?'Saída':'Entrada')+'</span><span class="pl">'+esc(t.nome)+'</span><span style="color:var(--muted)">'+c+'/'+b+'/'+a+(t.obs?' · '+esc(t.obs):'')+'</span></div>'}).join(''):vazio('Nenhuma movimentação registrada.');
+})();
+// Google Agenda
+(function(){const id=CONTEUDO.googleCalendar,b=document.getElementById('gcal');
+  b.innerHTML=id?'<iframe title="Agenda Google da BRCS ANR" loading="lazy" src="https://calendar.google.com/calendar/embed?src='+encodeURIComponent(id)+'&ctz=America%2FSao_Paulo&hl=pt_BR"></iframe>':vazio('A agenda Google será conectada em breve. Enquanto isso, use o calendário acima.')})();
+// Mural
+function renderMural(){
+  const M=EVENTOS._mural||[];
+  document.getElementById('muLista').innerHTML=M.length?M.map(r=>'<article class="player quote"><b>'+esc(r.n)+'</b>'+esc(r.t)+'</article>').join(''):'';
+  if(!M.length)document.getElementById('muLista').innerHTML='<p style="color:var(--muted)">Seja o primeiro a deixar um recado!</p>';
+}
+renderMural();
+document.getElementById('fMural').addEventListener('submit',e=>{
+  e.preventDefault();const n=muNome.value.trim(),t=muTxt.value.trim();
+  if(!n||!t){muMsg.textContent='Informe seu nome e a mensagem.';return}
+  abreMail('Recado para o mural BRCS ANR','Nome: '+n+'\n\nMensagem: '+t);
+  muMsg.textContent='Abrimos o seu e-mail com o recado. Depois de aprovado pela diretoria, ele aparece no mural.';
+});
+// Enquete
+(function(){
+  const q=CONTEUDO.enquete,tot=q.opcoes.reduce((a,o)=>a+o.votos,0);
+  document.getElementById('enquete').innerHTML='<div class="poll"><p><b>'+esc(q.pergunta)+'</b></p>'+q.opcoes.map((o,i)=>'<label><input type="radio" name="voto" value="'+i+'">'+esc(o.nome)+'</label>').join('')+'<button type="button" class="btn" id="votar" style="margin-top:8px">Votar</button><p id="vMsg" role="status" style="color:var(--accent)"></p></div>'+
+    '<p style="margin-top:16px;color:var(--muted)">Resultado parcial (atualizado pela diretoria):</p>'+q.opcoes.map(o=>'<div style="max-width:420px;margin-bottom:10px">'+esc(o.nome)+' · '+o.votos+' voto'+(o.votos===1?'':'s')+'<div class="bar2"><i style="width:'+(tot?Math.round(o.votos/tot*100):0)+'%"></i></div></div>').join('');
+  document.getElementById('votar').onclick=()=>{const r=document.querySelector('input[name=voto]:checked');
+    if(!r){vMsg.textContent='Escolha uma opção.';return}
+    abreMail('Voto: '+q.pergunta,'Meu voto: '+q.opcoes[r.value].nome);vMsg.textContent='Abrimos o seu e-mail com o voto. Envie para registrar.'}
+})();
+// Feedback
+(function(){const u=CONTEUDO.feedbackUrl,b=document.getElementById('fbBox');
+  if(/^https?:\/\//.test(u)){b.innerHTML='<a class="btn" target="_blank" rel="noopener" href="'+esc(u)+'">Enviar feedback anônimo</a>';return}
+  b.innerHTML='<form id="fFb" novalidate><fieldset><legend>Sugestão para a diretoria</legend><label>Sua sugestão<textarea id="fbTxt" rows="5"></textarea></label><p style="color:var(--muted);font-size:15px">Atenção: por enquanto o envio usa o seu e-mail, então não é anônimo. O formulário anônimo será ativado em breve.</p><p id="fbMsg" role="status" style="color:var(--accent)"></p><button type="submit" class="btn">Enviar sugestão</button></fieldset></form>';
+  document.getElementById('fFb').addEventListener('submit',e=>{e.preventDefault();const t=fbTxt.value.trim();if(!t){fbMsg.textContent='Escreva sua sugestão.';return}abreMail('Feedback BRCS ANR',t);fbMsg.textContent='Abrimos o seu e-mail com a sugestão.'});
+})();
+ 
+// Customização
+function linhas(o,L){return '<dl>'+L.map(l=>'<dt>'+l[1]+'</dt><dd>'+esc(o[l[0]]||'A definir')+'</dd>').join('')+'</dl>'}
+document.getElementById('cItens').innerHTML=CONTEUDO.customizacao.map(j=>'<article class="player"><h3>'+esc(j.nome)+'</h3>'+linhas(j,[['carro','Carro'],['rodas','Rodas'],['explosao','Explosão de gol'],['decal','Decal'],['trilha','Trilha']])+'</article>').join('');
+document.getElementById('cCam').innerHTML=CONTEUDO.camera.map(j=>'<article class="player"><h3>'+esc(j.nome)+'</h3>'+linhas(j,[['fov','FOV'],['distancia','Distância'],['altura','Altura'],['angulo','Ângulo'],['rigidez','Rigidez'],['transicao','Velocidade de transição'],['giro','Sensibilidade de giro da câmera'],['sens','Sensibilidade de direção'],['deadzone','Deadzone'],['teclas','Teclas / botões (keybinds)']])+'</article>').join('');
+(function(){const T=CONTEUDO.treino,b=document.getElementById('cTreino');
+  b.innerHTML=T.length?T.map((t,i)=>'<article class="player"><h3>'+esc(t.nome)+'</h3>'+(t.tipo?'<p style="margin:0;color:var(--muted)">'+esc(t.tipo)+'</p>':'')+'<div class="pixcode" style="margin:10px 0">'+esc(t.codigo)+'</div><button type="button" class="btn ghost" style="margin:0" data-cp="'+i+'">Copiar código</button></article>').join(''):'<p style="color:var(--muted)">Os códigos de treino serão publicados em breve.</p>';
+  b.addEventListener('click',e=>{const k=e.target.closest('[data-cp]');if(!k)return;const t=T[k.dataset.cp];
+    (navigator.clipboard?navigator.clipboard.writeText(t.codigo):Promise.reject()).then(()=>{k.textContent='Copiado!'}).catch(()=>{k.textContent='Copie manualmente'})});
+})();
+// Pix
+function tlv(i,v){return i+String(v.length).padStart(2,'0')+v}
+function crc16(t){let c=0xFFFF;for(let i=0;i<t.length;i++){c^=t.charCodeAt(i)<<8;for(let j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021):(c<<1);c&=0xFFFF}return c.toString(16).toUpperCase().padStart(4,'0')}
+function pixPayload(chave,nome,cidade){const sem=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
+  const p=tlv('00','01')+tlv('01','11')+tlv('26',tlv('00','br.gov.bcb.pix')+tlv('01',chave))+tlv('52','0000')+tlv('53','986')+tlv('58','BR')+tlv('59',sem(nome).slice(0,25))+tlv('60',sem(cidade).slice(0,15))+tlv('62',tlv('05','***'))+'6304';
+  return p+crc16(p)}
+(function(){
+  const P=CONTEUDO.pix,box=document.getElementById('pix');
+  if(!P.chave){box.innerHTML='<div class="empty"><h3>Chave Pix em breve</h3><p>Em breve divulgaremos aqui a chave Pix e o QR Code para apoiar o time.</p></div>';return}
+  const code=pixPayload(P.chave,P.nome,P.cidade);
+  box.innerHTML='<div class="empty"><h3>Contribua via Pix</h3><p>Chave Pix: <b>'+esc(P.chave)+'</b><br>Favorecido: '+esc(P.nome)+'</p><div id="qr"></div><p>Pix copia e cola:</p><div class="pixcode">'+esc(code)+'</div><button type="button" class="btn" id="cpPix" style="margin-top:12px">Copiar código Pix</button></div>';
+  document.getElementById('cpPix').onclick=function(){(navigator.clipboard?navigator.clipboard.writeText(code):Promise.reject()).then(()=>{this.textContent='Copiado!'}).catch(()=>{this.textContent='Selecione e copie o código acima'})};
+  const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js';
+  sc.onload=()=>{const q=qrcode(0,'M');q.addData(code);q.make();document.getElementById('qr').innerHTML='<div class="qrbox" role="img" aria-label="QR Code Pix">'+q.createSvgTag(4,0)+'</div>'};
+  document.head.appendChild(sc);
+})();
+// Loja conceito
+(function(){
+  const t='font-family="Impact,Arial Black,sans-serif" text-anchor="middle" fill="#ff7a00"',st='fill="#0a0a0a" stroke="#ff7a00" stroke-width="5" stroke-linejoin="round"';
+  const M=[['Camisa oficial','<svg viewBox="0 0 300 280"><path d="M80 30 L120 18 Q150 45 180 18 L220 30 L280 80 L245 112 L225 96 V262 H75 V96 L55 112 L20 80 Z" '+st+'/><text x="150" y="140" '+t+' font-size="40">BRCS ANR</text><text x="150" y="172" font-family="Arial" text-anchor="middle" font-size="14" letter-spacing="4" fill="#fff">EST. 2026</text></svg>'],
+    ['Boné','<svg viewBox="0 0 300 280"><path d="M50 170 Q50 70 150 70 Q250 70 250 170 Z" '+st+'/><path d="M40 170 Q150 150 275 190 Q150 215 40 170 Z" fill="#ff7a00"/><text x="150" y="140" '+t+' font-size="30">BRCS</text></svg>'],
+    ['Moletom','<svg viewBox="0 0 300 280"><path d="M105 28 Q150 5 195 28 L255 55 L285 200 L245 210 L232 130 V265 H68 V130 L55 210 L15 200 L45 55 Z" '+st+'/><path d="M105 28 Q150 90 195 28" fill="none" stroke="#ff7a00" stroke-width="5"/><text x="150" y="150" '+t+' font-size="34">BRCS ANR</text><path d="M100 205 H200 L190 245 H110 Z" fill="none" stroke="#ff7a00" stroke-width="4"/></svg>']];
+  document.getElementById('loja').innerHTML=M.map(m=>'<article class="player mock"><h3>'+m[0]+'</h3>'+m[1]+'<p style="margin:8px 0 0;color:var(--muted)">Conceito</p></article>').join('');
+})();
+// Notícias
+(function(){const N=CONTEUDO.noticias.slice().sort((a,b)=>b.data.localeCompare(a.data));
+  document.getElementById('posts').innerHTML=N.length?N.map(n=>{const[a,b,c]=n.data.split('-');return '<article class="post"><small>'+c+'/'+b+'/'+a+'</small><h3>'+esc(n.titulo)+'</h3><p>'+esc(n.texto)+'</p></article>'}).join(''):'<p style="color:var(--muted)">Sem novidades por enquanto.</p>';})();
+// Contagem regressiva
+function proximoJogo(){
+  const ag=new Date(),P=CONTEUDO.proximaPartida;
+  if(P&&P.data){const t=new Date(P.data);if(t>ag)return{t,nome:((P.adv?'vs '+P.adv:'')+(P.competicao?' · '+P.competicao:''))||'Partida oficial'}}
+  const hj=new Date(ag.getFullYear(),ag.getMonth(),ag.getDate());let r=null;
+  Object.keys(EVENTOS).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)).sort().forEach(k=>{if(r)return;const[a,b,c]=k.split('-'),d=new Date(a,b-1,c),e=EVENTOS[k].find(x=>x.tipo==='camp');if(d>=hj&&e)r={t:d,hoje:d.getTime()===hj.getTime(),nome:e.t}});
+  return r}
+function renderContagem(){
+  const el=document.getElementById('contagem'),p=proximoJogo();
+  if(!p){el.innerHTML='<span class="cl">Próxima partida</span>A definir';return}
+  if(p.hoje){el.innerHTML='<span class="cl">Próxima partida</span><b>É HOJE</b> '+esc(p.nome);return}
+  const s=Math.max(0,Math.floor((p.t-new Date())/1000)),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+  el.innerHTML='<span class="cl">Próxima partida · '+esc(p.nome)+'</span><b>'+d+'</b> dias <b>'+pad(h)+'</b>h <b>'+pad(m)+'</b>min <b>'+pad(s%60)+'</b>s';
+}
+renderContagem();setInterval(renderContagem,1000);
+ 
+// Rodapé: redes e créditos
+(function(){
+  const I={instagram:['Instagram','<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>'],
+    tiktok:['TikTok','<path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2 4.2 5 4.5"/>'],
+    x:['X (Twitter)','<path d="M4 4l16 16M20 4L4 20"/>'],
+    youtube:['YouTube','<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/>']};
+  document.getElementById('redes').innerHTML=Object.keys(I).map(k=>{const u=CONTEUDO.redes[k],svg='<svg viewBox="0 0 24 24" aria-hidden="true">'+I[k][1]+'</svg>';
+    return /^https?:\/\//.test(u||'')?'<a href="'+esc(u)+'" target="_blank" rel="noopener" aria-label="'+I[k][0]+'">'+svg+'</a>':'<span class="off" title="'+I[k][0]+': em breve" aria-label="'+I[k][0]+' em breve">'+svg+'</span>'}).join('');
+  document.getElementById('creditos').textContent=CONTEUDO.creditos||'';
+})();
+// Contato comercial
+document.getElementById('fContato').addEventListener('submit',e=>{
+  e.preventDefault();const n=ctNome.value.trim(),m=ctMail.value.trim(),t=ctMsg.value.trim();
+  if(!n||!/^\S+@\S+\.\S+$/.test(m)||!t){ctRes.textContent='Preencha nome, um e-mail válido e a mensagem.';return}
+  abreMail('Contato comercial: '+ctAssunto.value+' - '+n,'Nome/organização: '+n+'\nE-mail: '+m+'\nAssunto: '+ctAssunto.value+'\n\n'+t);
+  ctRes.textContent='Abrimos o seu e-mail com a mensagem pronta. É só enviar.';
+});
 // Media kit
 function crestSVG(){const f='font-family="Impact,Arial Black,sans-serif" text-anchor="middle" fill="#ff7a00"';return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 600"><path d="M256 20 L480 90 V300 C480 430 380 520 256 580 C132 520 32 430 32 300 V90 Z" fill="#000" stroke="#ff7a00" stroke-width="22" stroke-linejoin="round"/><text x="256" y="270" '+f+' font-size="120">BRCS</text><text x="256" y="390" '+f+' font-size="120">ANR</text><text x="256" y="460" font-family="Arial,sans-serif" text-anchor="middle" font-size="30" letter-spacing="6" fill="#fff">EST. 2026</text></svg>'}
 document.getElementById('crest').innerHTML=crestSVG();
@@ -537,10 +895,11 @@ function valida(){
   form.querySelectorAll('.bad').forEach(e=>e.classList.remove('bad'));
   for(const k in L)if(!o[k]){falta.push(L[k]);const el=form.elements[k];
     (el.tagName?el:el[0].closest('.opts')).classList.add('bad');if(!el.tagName)el[0].closest('.opts').classList.add('bad')}
+  if(!document.getElementById('aceite').checked)falta.push('Aceite da Política de Privacidade');
   document.getElementById('erro').textContent=falta.length?"Preencha os campos obrigatórios: "+falta.join(", ")+".":"";
   return falta.length?null:o;
 }
-function texto(o){return "INSCRIÇÃO - PROCESSO SELETIVO COMUNIDADE BRCS ANR\n\n"+Object.keys(L).map(k=>L[k]+": "+o[k]).join("\n\n")}
+function texto(o){return "INSCRIÇÃO - PROCESSO SELETIVO COMUNIDADE BRCS ANR\n\n"+Object.keys(L).map(k=>L[k]+": "+o[k]).join("\n\n")+"\n\nAceite da Política de Privacidade: Sim"}
 form.addEventListener('submit',e=>{
   e.preventDefault();const o=valida();if(!o)return;
   const a=document.createElement('a');
@@ -553,6 +912,147 @@ document.getElementById('copiar').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(texto(o));ok.textContent="Inscrição copiada. Cole em um e-mail para "+MAIL+"."}
   catch(err){ok.textContent="Não foi possível copiar automaticamente. Use o botão de envio por e-mail."}
 });
+</script>
+<script type="module">
+/* ===== ÁREA DE MEMBROS (Firebase Authentication + Firestore) =====
+   1) Cole abaixo as credenciais do seu app web do Firebase.
+   2) Veja as instruções de configuração enviadas junto com este arquivo. */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+ 
+const firebaseConfig = {
+  apiKey: "COLE_AQUI",
+  authDomain: "brcs-anr.firebaseapp.com",
+  projectId: "brcs-anr",
+  storageBucket: "brcs-anr.firebasestorage.app",
+  messagingSenderId: "193801085521",
+  appId: "COLE_AQUI"
+};
+ 
+const $ = id => document.getElementById(id);
+const modal = $("modalMembros"), box = modal.querySelector(".modal-box");
+const btnTopo = $("btnMembros"), formL = $("mmForm"), erro = $("mmErro");
+const configurado = firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith("COLE");
+let auth = null, db = null, ultimoFoco = null;
+ 
+if (configurado) {
+  const app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+}
+ 
+/* ---- modal ---- */
+function abrir() {
+  ultimoFoco = document.activeElement;
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+  const alvo = $("mmLogin").hidden ? $("mmSair") : $("mmEmail");
+  setTimeout(() => alvo.focus(), 30);
+}
+function fechar() {
+  modal.hidden = true;
+  document.body.style.overflow = "";
+  if (ultimoFoco) ultimoFoco.focus();
+}
+btnTopo.addEventListener("click", abrir);
+$("mmFechar").addEventListener("click", fechar);
+modal.addEventListener("mousedown", e => { if (e.target === modal) fechar(); });
+document.addEventListener("keydown", e => {
+  if (modal.hidden) return;
+  if (e.key === "Escape") fechar();
+  if (e.key === "Tab") {
+    const f = [...box.querySelectorAll("button,input,a[href]")].filter(x => !x.disabled && x.offsetParent !== null);
+    if (!f.length) return;
+    const a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+  }
+});
+ 
+/* ---- telas ---- */
+function mostrarLogin() {
+  $("mmPainel").hidden = true;
+  $("mmLogin").hidden = false;
+  btnTopo.textContent = "Área de Membros";
+  formL.reset();
+  erro.textContent = configurado ? "" : "A Área de Membros ainda não foi configurada pela diretoria.";
+  $("mmEntrar").disabled = !configurado;
+}
+function formatarId(n) {
+  const v = Number(n);
+  return "#" + (Number.isFinite(v) ? String(v).padStart(3, "0") : String(n));
+}
+function mostrarPainel(user, dados) {
+  $("mmLogin").hidden = true;
+  $("mmPainel").hidden = false;
+  btnTopo.textContent = "Painel do membro";
+  if (dados) {
+    $("mmBemvindo").textContent = "Bem-vindo, " + dados.nome + "!";
+    $("mmId").textContent = "Seu ID de membro é o " + formatarId(dados.idMembro) + " da BRCS ANR";
+    $("mmDFuncao").textContent = dados.funcao || "Jogador";
+    $("mmAviso").textContent = "";
+  } else {
+    $("mmBemvindo").textContent = "Bem-vindo!";
+    $("mmId").textContent = "Cadastro em andamento";
+    $("mmDFuncao").textContent = "-";
+    $("mmAviso").textContent = "Seu acesso existe, mas o seu cadastro de membro ainda não foi concluído. Fale com a diretoria.";
+  }
+  $("mmDEmail").textContent = user.email;
+}
+ 
+/* ---- login / logout ---- */
+function mensagemErro(e) {
+  switch (e && e.code) {
+    case "auth/invalid-credential":
+    case "auth/wrong-password":
+    case "auth/user-not-found":
+    case "auth/invalid-email": return "E-mail ou senha incorretos.";
+    case "auth/user-disabled": return "Este acesso foi desativado. Fale com a diretoria.";
+    case "auth/too-many-requests": return "Muitas tentativas. Aguarde alguns minutos e tente de novo.";
+    case "auth/network-request-failed": return "Sem conexão. Verifique a internet.";
+    default: return "Não foi possível entrar agora. Tente novamente.";
+  }
+}
+formL.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!configurado) return;
+  const email = $("mmEmail").value.trim(), senha = $("mmSenha").value;
+  if (!email || !senha) { erro.textContent = "Informe e-mail e senha."; return; }
+  const b = $("mmEntrar"); b.disabled = true; b.textContent = "Entrando..."; erro.textContent = "";
+  try {
+    await signInWithEmailAndPassword(auth, email, senha);
+  } catch (err) {
+    erro.textContent = mensagemErro(err);
+  } finally {
+    b.disabled = false; b.textContent = "Entrar";
+  }
+});
+$("mmReset").addEventListener("click", async () => {
+  if (!configurado) return;
+  const email = $("mmEmail").value.trim();
+  if (!email) { erro.textContent = "Digite seu e-mail acima para receber o link de nova senha."; return; }
+  try { await sendPasswordResetEmail(auth, email); } catch (e) { /* não revela se o e-mail existe */ }
+  erro.textContent = "Se este e-mail tiver acesso, enviamos um link para criar uma nova senha.";
+});
+$("mmSair").addEventListener("click", async () => {
+  try { await signOut(auth); } finally { fechar(); }
+});
+ 
+/* ---- sessão: busca os dados do membro no Firestore (coleção "membros", documento = UID) ---- */
+if (configurado) {
+  onAuthStateChanged(auth, async user => {
+    if (!user) { mostrarLogin(); return; }
+    let dados = null;
+    try {
+      const snap = await getDoc(doc(db, "membros", user.uid));
+      dados = snap.exists() ? snap.data() : null;
+    } catch (e) { dados = null; }
+    mostrarPainel(user, dados);
+  });
+} else {
+  mostrarLogin();
+}
 </script>
 </body>
 </html>
