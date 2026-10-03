@@ -22,7 +22,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://matheusviniciusbarbierisilva-design.github.io/BRCS-ANR/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsTeam","name":"Comunidade BRCS ANR","alternateName":"BRCS ANR","sport":"Rocket League (eSports)","description":"Time amador de Rocket League nascido no bairro Ana Rosa, em Cambé, Paraná.","foundingDate":"2026-09-29","location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Cambé","addressRegion":"PR","addressCountry":"BR"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsTeam","name":"Comunidade BRCS ANR","alternateName":"BRCS ANR","sport":"Rocket League (eSports)","description":"Time amador de Rocket League nascido no bairro Ana Rosa, em Cambé, Paraná.","foundingDate":"2026-09-29","sameAs":["https://www.instagram.com/brcsanr_esports","https://discord.gg/qQSnNa59C"],"location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Cambé","addressRegion":"PR","addressCountry":"BR"}}}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap">
 <style>
 :root{
@@ -721,7 +721,7 @@ const CONTEUDO={
   googleCalendar:"", // ID da agenda pública do Google
   enquete:{pergunta:"MVP da semana",opcoes:[{nome:"BRCSMatheuzin",votos:0},{nome:"BRCS_l DARK l157",votos:0}]},
   feedbackUrl:"",    // link de um Google Forms (feedback anônimo)
-  redes:{instagram:"",tiktok:"",x:"",youtube:""}, // cole o link de cada perfil
+  redes:{instagram:"https://www.instagram.com/brcsanr_esports",tiktok:"",x:"",youtube:""}, // cole o link de cada perfil
   creditos:"Site e escudo: equipe BRCS ANR",
   proximaPartida:{data:"",adv:"",competicao:""}, // ex: data:"2026-10-17T20:00"
   customizacao:[
@@ -1016,7 +1016,7 @@ function mostrarPainel(user, dados) {
   
   if (dados) {
     $("mmBemvindo").textContent = "Bem-vindo, " + dados.nome + "!";
-    $("mmId").textContent = "Seu ID de membro é o " + formatarId(dados.idMembro) + " da BRCS ANR";
+    $("mmId").textContent = "Seu ID de membro é o " + formatarId(dados.idMembro ?? dados.idmembro) + " da BRCS ANR";
     $("mmDFuncao").textContent = dados.funcao || "Jogador";
     $("mmAviso").textContent = "";
   } else {
